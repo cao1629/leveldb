@@ -23,6 +23,7 @@ struct ReadOptions;
 class BlockHandle {
  public:
   // Maximum encoding length of a BlockHandle
+  // variable length uint64 -> 10 bytes
   enum { kMaxEncodedLength = 10 + 10 };
 
   BlockHandle();
@@ -62,7 +63,10 @@ class Footer {
   const BlockHandle& index_handle() const { return index_handle_; }
   void set_index_handle(const BlockHandle& h) { index_handle_ = h; }
 
+  // A Footer object -> string
   void EncodeTo(std::string* dst) const;
+
+  // Slice -> Footer
   Status DecodeFrom(Slice* input);
 
  private:
@@ -78,6 +82,7 @@ static const uint64_t kTableMagicNumber = 0xdb4775248b80fb57ull;
 // 1-byte type + 32-bit crc
 static const size_t kBlockTrailerSize = 5;
 
+// A block after compression
 struct BlockContents {
   Slice data;           // Actual contents of data
   bool cachable;        // True iff data can be cached

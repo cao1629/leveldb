@@ -77,8 +77,13 @@ class HandleTable {
   }
 
   LRUHandle* Insert(LRUHandle* h) {
+    // If h->key() already exists, *ptr is a LRUHandle pointer which points to the existing entry
+    // **ptr is the address of the next_hash_ member of the previous node
+    // *ptr is the value of the next_hash_member of the previous node
     LRUHandle** ptr = FindPointer(h->key(), h->hash);
     LRUHandle* old = *ptr;
+    // old == nullptr: h->key() doesn't exist
+    // old != nullptr: h->key() already exists
     h->next_hash = (old == nullptr ? nullptr : old->next_hash);
     *ptr = h;
     if (old == nullptr) {
@@ -115,6 +120,7 @@ class HandleTable {
   LRUHandle** FindPointer(const Slice& key, uint32_t hash) {
     LRUHandle** ptr = &list_[hash & (length_ - 1)];
     while (*ptr != nullptr && ((*ptr)->hash != hash || key != (*ptr)->key())) {
+      // address of the data member next_hash
       ptr = &(*ptr)->next_hash;
     }
     return ptr;
@@ -270,6 +276,8 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
                                                 void* value)) {
   MutexLock l(&mutex_);
 
+  // why not LRUHandle *e = new LRUHandle();
+  // using malloc doesn't invoke the constructor
   LRUHandle* e =
       reinterpret_cast<LRUHandle*>(malloc(sizeof(LRUHandle) - 1 + key.size()));
   e->value = value;
@@ -286,11 +294,14 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
     e->in_cache = true;
     LRU_Append(&in_use_, e);
     usage_ += charge;
+    // If key already exists, erase the old entry
     FinishErase(table_.Insert(e));
   } else {  // don't cache. (capacity_==0 is supported and turns off caching.)
     // next is read by key() in an assert, so it must be initialized
     e->next = nullptr;
   }
+
+  // evict
   while (usage_ > capacity_ && lru_.next != &lru_) {
     LRUHandle* old = lru_.next;
     assert(old->refs == 1);
@@ -305,6 +316,8 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
 
 // If e != nullptr, finish removing *e from the cache; it has already been
 // removed from the hash table.  Return whether e != nullptr.
+//
+// After removing an entry from the cache, invoke FinishErase to update usage_ and Unref the LRUHandle
 bool LRUCache::FinishErase(LRUHandle* e) {
   if (e != nullptr) {
     assert(e->in_cache);

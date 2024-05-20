@@ -35,10 +35,16 @@ struct TableBuilder::Rep {
     index_block_options.block_restart_interval = 1;
   }
 
+  // data blocks
   Options options;
+
+  // index blocks
   Options index_block_options;
   WritableFile* file;
+
+  // the offset of the current block in the sstable
   uint64_t offset;
+
   Status status;
   BlockBuilder data_block;
   BlockBuilder index_block;
@@ -57,6 +63,9 @@ struct TableBuilder::Rep {
   //
   // Invariant: r->pending_index_entry is true only if data_block is empty.
   bool pending_index_entry;
+
+  // the BlockHandle of the previous block
+  // pending: we're about to add the index of the previous block to the index block (key, value: this BlockHandle)
   BlockHandle pending_handle;  // Handle to add to index block
 
   std::string compressed_output;
@@ -95,10 +104,13 @@ void TableBuilder::Add(const Slice& key, const Slice& value) {
   Rep* r = rep_;
   assert(!r->closed);
   if (!ok()) return;
+  // make sure that the key to be added > last key
   if (r->num_entries > 0) {
     assert(r->options.comparator->Compare(key, Slice(r->last_key)) > 0);
   }
 
+  // pending_index_entry is true: this is a new data block
+  // pending: index is waiting to be written into index_block
   if (r->pending_index_entry) {
     assert(r->data_block.empty());
     r->options.comparator->FindShortestSeparator(&r->last_key, key);
@@ -117,17 +129,25 @@ void TableBuilder::Add(const Slice& key, const Slice& value) {
   r->data_block.Add(key, value);
 
   const size_t estimated_block_size = r->data_block.CurrentSizeEstimate();
+  // the data block is full, flush it
   if (estimated_block_size >= r->options.block_size) {
     Flush();
   }
 }
 
+// the data block is full, flush it
+// you want to finish a table, flush the current block even if not full
+// set pending_index_entry and pending_handle
 void TableBuilder::Flush() {
   Rep* r = rep_;
   assert(!r->closed);
   if (!ok()) return;
+  // the current data block is not empty
   if (r->data_block.empty()) return;
+
+  // make sure there is no index to add
   assert(!r->pending_index_entry);
+
   WriteBlock(&r->data_block, &r->pending_handle);
   if (ok()) {
     r->pending_index_entry = true;
@@ -138,6 +158,8 @@ void TableBuilder::Flush() {
   }
 }
 
+// write the block to the disk
+// get the BlockHandle of the block and set it to pending_handle ()
 void TableBuilder::WriteBlock(BlockBuilder* block, BlockHandle* handle) {
   // File format contains a sequence of blocks where each block has:
   //    block_data: uint8[n]
@@ -145,8 +167,11 @@ void TableBuilder::WriteBlock(BlockBuilder* block, BlockHandle* handle) {
   //    crc: uint32
   assert(ok());
   Rep* r = rep_;
+
+  // get a complete data block, which is stored in a Slice
   Slice raw = block->Finish();
 
+  // compression
   Slice block_contents;
   CompressionType type = r->options.compression;
   // TODO(postrelease): Support more compression options: zlib?
@@ -186,6 +211,8 @@ void TableBuilder::WriteBlock(BlockBuilder* block, BlockHandle* handle) {
   }
   WriteRawBlock(block_contents, type, handle);
   r->compressed_output.clear();
+
+  // the BlockBuilder will build a new data block
   block->Reset();
 }
 

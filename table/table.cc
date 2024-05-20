@@ -35,6 +35,8 @@ struct Table::Rep {
   Block* index_block;
 };
 
+
+// Read a table from disks to memory (Table object)
 Status Table::Open(const Options& options, RandomAccessFile* file,
                    uint64_t size, Table** table) {
   *table = nullptr;
@@ -79,6 +81,7 @@ Status Table::Open(const Options& options, RandomAccessFile* file,
   return s;
 }
 
+// read meta index block (information about filter)
 void Table::ReadMeta(const Footer& footer) {
   if (rep_->options.filter_policy == nullptr) {
     return;  // Do not need any metadata

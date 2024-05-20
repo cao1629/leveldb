@@ -39,8 +39,8 @@ class Arena {
   char* AllocateNewBlock(size_t block_bytes);
 
   // Allocation state
-  char* alloc_ptr_;
-  size_t alloc_bytes_remaining_;
+  char* alloc_ptr_;   // the first byte of newly allocated space
+  size_t alloc_bytes_remaining_;  // remaining bytes of the current block
 
   // Array of new[] allocated memory blocks
   std::vector<char*> blocks_;

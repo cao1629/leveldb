@@ -26,6 +26,7 @@ class BlockBuilder {
 
   // REQUIRES: Finish() has not been called since the last call to Reset().
   // REQUIRES: key is larger than any previously added key
+  // keys in a memtable are sorted. Add() is used to fetch keys in a memtable and add them to a block
   void Add(const Slice& key, const Slice& value);
 
   // Finish building the block and return a slice that refers to the

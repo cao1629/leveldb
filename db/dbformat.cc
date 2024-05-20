@@ -116,6 +116,8 @@ bool InternalFilterPolicy::KeyMayMatch(const Slice& key, const Slice& f) const {
 
 LookupKey::LookupKey(const Slice& user_key, SequenceNumber s) {
   size_t usize = user_key.size();
+
+  // 13 = 5 (varint) + 8 (sequence number + type)
   size_t needed = usize + 13;  // A conservative estimate
   char* dst;
   if (needed <= sizeof(space_)) {

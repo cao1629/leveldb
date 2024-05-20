@@ -58,6 +58,8 @@ size_t BlockBuilder::CurrentSizeEstimate() const {
           sizeof(uint32_t));                     // Restart array length
 }
 
+// construct restart array and restart size
+// set finished_ to true
 Slice BlockBuilder::Finish() {
   // Append restart array
   for (size_t i = 0; i < restarts_.size(); i++) {
@@ -71,9 +73,13 @@ Slice BlockBuilder::Finish() {
 void BlockBuilder::Add(const Slice& key, const Slice& value) {
   Slice last_key_piece(last_key_);
   assert(!finished_);
+  // make sure that restart points are set up on time
   assert(counter_ <= options_->block_restart_interval);
+
   assert(buffer_.empty()  // No values yet?
          || options_->comparator->Compare(key, last_key_piece) > 0);
+
+  // compute shared
   size_t shared = 0;
   if (counter_ < options_->block_restart_interval) {
     // See how much sharing to do with previous string
@@ -81,11 +87,13 @@ void BlockBuilder::Add(const Slice& key, const Slice& value) {
     while ((shared < min_length) && (last_key_piece[shared] == key[shared])) {
       shared++;
     }
-  } else {
+  } else { // counter_ == options_->block_restart_interval: a restart is needed
     // Restart compression
     restarts_.push_back(buffer_.size());
     counter_ = 0;
   }
+
+  // compute non_shared
   const size_t non_shared = key.size() - shared;
 
   // Add "<shared><non_shared><value_size>" to buffer_

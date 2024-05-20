@@ -83,6 +83,9 @@ int VarintLength(uint64_t v) {
   return len;
 }
 
+// memory[p, limit) hold a VarInt32
+// return the next byte after the VarInt32 on success
+// return nullptr on failure
 const char* GetVarint32PtrFallback(const char* p, const char* limit,
                                    uint32_t* value) {
   uint32_t result = 0;
@@ -101,6 +104,7 @@ const char* GetVarint32PtrFallback(const char* p, const char* limit,
   return nullptr;
 }
 
+//
 bool GetVarint32(Slice* input, uint32_t* value) {
   const char* p = input->data();
   const char* limit = p + input->size();
@@ -112,6 +116,7 @@ bool GetVarint32(Slice* input, uint32_t* value) {
     return true;
   }
 }
+
 
 const char* GetVarint64Ptr(const char* p, const char* limit, uint64_t* value) {
   uint64_t result = 0;

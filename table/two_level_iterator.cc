@@ -65,6 +65,9 @@ class TwoLevelIterator : public Iterator {
   IteratorWrapper data_iter_;  // May be nullptr
   // If data_iter_ is non-null, then "data_block_handle_" holds the
   // "index_value" passed to block_function_ to create the data_iter_.
+  //
+  // we first use index_iter_. to find the right block
+  // data_block_handle_ holds the index we used to find the right block
   std::string data_block_handle_;
 };
 
@@ -147,12 +150,15 @@ void TwoLevelIterator::InitDataBlock() {
   if (!index_iter_.Valid()) {
     SetDataIterator(nullptr);
   } else {
+    // current index
     Slice handle = index_iter_.value();
     if (data_iter_.iter() != nullptr &&
         handle.compare(data_block_handle_) == 0) {
       // data_iter_ is already constructed with this iterator, so
       // no need to change anything
     } else {
+      // arg_ is a Table object
+      // index iterator + Table -> a data iterator
       Iterator* iter = (*block_function_)(arg_, options_, handle);
       data_block_handle_.assign(handle.data(), handle.size());
       SetDataIterator(iter);

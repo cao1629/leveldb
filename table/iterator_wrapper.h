@@ -75,6 +75,7 @@ class IteratorWrapper {
   }
 
  private:
+  // update key_ according to iter_.key()
   void Update() {
     valid_ = iter_->Valid();
     if (valid_) {

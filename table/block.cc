@@ -52,9 +52,12 @@ Block::~Block() {
 //
 // If any errors are detected, returns nullptr.  Otherwise, returns a
 // pointer to the key delta (just past the three decoded values).
+//
+// limit: data_ + restarts_
 static inline const char* DecodeEntry(const char* p, const char* limit,
                                       uint32_t* shared, uint32_t* non_shared,
                                       uint32_t* value_length) {
+  // limit - p is 3: shared is 1 byte, unshared is 1 byte, value_length is 1 byte, key_delta is empty, value is empty
   if (limit - p < 3) return nullptr;
   *shared = reinterpret_cast<const uint8_t*>(p)[0];
   *non_shared = reinterpret_cast<const uint8_t*>(p)[1];
@@ -102,6 +105,8 @@ class Block::Iter : public Iterator {
     return DecodeFixed32(data_ + restarts_ + index * sizeof(uint32_t));
   }
 
+  // update key_, value_, restart_index_
+  // current_ will be updated later
   void SeekToRestartPoint(uint32_t index) {
     key_.clear();
     restart_index_ = index;
@@ -113,6 +118,7 @@ class Block::Iter : public Iterator {
   }
 
  public:
+  // in the beginning, current_ points to the restart array
   Iter(const Comparator* comparator, const char* data, uint32_t restarts,
        uint32_t num_restarts)
       : comparator_(comparator),
@@ -124,8 +130,11 @@ class Block::Iter : public Iterator {
     assert(num_restarts_ > 0);
   }
 
+  // current_ >= restarts_: no more key-value data
   bool Valid() const override { return current_ < restarts_; }
+
   Status status() const override { return status_; }
+
   Slice key() const override {
     assert(Valid());
     return key_;
@@ -135,10 +144,12 @@ class Block::Iter : public Iterator {
     return value_;
   }
 
+  // use ParseNextKey()
   void Next() override {
     assert(Valid());
     ParseNextKey();
   }
+
 
   void Prev() override {
     assert(Valid());
@@ -161,6 +172,7 @@ class Block::Iter : public Iterator {
     } while (ParseNextKey() && NextEntryOffset() < original);
   }
 
+  // update key_, value_, current_
   void Seek(const Slice& target) override {
     // Binary search in restart array to find the last restart point
     // with a key < target
@@ -184,6 +196,7 @@ class Block::Iter : public Iterator {
       }
     }
 
+    // binary search
     while (left < right) {
       uint32_t mid = (left + right + 1) / 2;
       uint32_t region_offset = GetRestartPoint(mid);
@@ -247,7 +260,10 @@ class Block::Iter : public Iterator {
     value_.clear();
   }
 
+  // update current_, key_, value_
+  // update restart_index_ if necessary
   bool ParseNextKey() {
+    // update current_ to the next entry offset
     current_ = NextEntryOffset();
     const char* p = data_ + current_;
     const char* limit = data_ + restarts_;  // Restarts come right after data
@@ -265,9 +281,13 @@ class Block::Iter : public Iterator {
       CorruptionError();
       return false;
     } else {
+      // each key is larger than the previous key, and all keys are larger than the key on the restart point
+      // so shared_bytes is decreasing
       key_.resize(shared);
       key_.append(p, non_shared);
       value_ = Slice(p + non_shared, value_length);
+
+      // if the next key reaches a new restart point, increment restart_index_
       while (restart_index_ + 1 < num_restarts_ &&
              GetRestartPoint(restart_index_ + 1) < current_) {
         ++restart_index_;

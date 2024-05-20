@@ -68,11 +68,14 @@ class FileState {
     size_ = 0;
   }
 
+  // read from blocks: vector<char*>
   Status Read(uint64_t offset, size_t n, Slice* result, char* scratch) const {
     MutexLock lock(&blocks_mutex_);
     if (offset > size_) {
       return Status::IOError("Offset greater than file size.");
     }
+
+    // how many bytes can we read?
     const uint64_t available = size_ - offset;
     if (n > available) {
       n = static_cast<size_t>(available);
@@ -83,9 +86,13 @@ class FileState {
     }
 
     assert(offset / kBlockSize <= std::numeric_limits<size_t>::max());
+
+    // start from which block
     size_t block = static_cast<size_t>(offset / kBlockSize);
     size_t block_offset = offset % kBlockSize;
     size_t bytes_to_copy = n;
+
+    // destination
     char* dst = scratch;
 
     while (bytes_to_copy > 0) {
@@ -101,6 +108,7 @@ class FileState {
       block_offset = 0;
     }
 
+    // Slice of destination
     *result = Slice(scratch, n);
     return Status::OK();
   }
@@ -111,7 +119,9 @@ class FileState {
 
     MutexLock lock(&blocks_mutex_);
     while (src_len > 0) {
+      // available bytes in the current file block
       size_t avail;
+
       size_t offset = size_ % kBlockSize;
 
       if (offset != 0) {
@@ -145,7 +155,11 @@ class FileState {
   int refs_ GUARDED_BY(refs_mutex_);
 
   mutable port::Mutex blocks_mutex_;
+
+  // each block is char[kBlockSize]
   std::vector<char*> blocks_ GUARDED_BY(blocks_mutex_);
+
+  // size of the file
   uint64_t size_ GUARDED_BY(blocks_mutex_);
 };
 
