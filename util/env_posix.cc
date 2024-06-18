@@ -260,7 +260,7 @@ class PosixMmapReadableFile final : public RandomAccessFile {
               char* scratch) const override {
     if (offset + n > length_) {
       *result = Slice();
-      return PosixError(filename_, EINVAL);
+      return PosixError(filename_, EINVAL); // invalid argument
     }
 
     *result = Slice(mmap_base_ + offset, n);
