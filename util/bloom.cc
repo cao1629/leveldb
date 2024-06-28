@@ -33,6 +33,7 @@ class BloomFilterPolicy : public FilterPolicy {
     // by enforcing a minimum bloom filter length.
     if (bits < 64) bits = 64;
 
+    // bits must be a multiple of 8 (8 bits form a byte)
     size_t bytes = (bits + 7) / 8;
     bits = bytes * 8;
 

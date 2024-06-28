@@ -133,6 +133,7 @@ class Version {
   Version(const Version&) = delete;
   Version& operator=(const Version&) = delete;
 
+  // get rid of files whose ref is 0
   ~Version();
 
   Iterator* NewConcatenatingIterator(const ReadOptions&, int level) const;

@@ -29,6 +29,7 @@ class Block {
   Iterator* NewIterator(const Comparator* comparator);
 
  private:
+  // A block's iterator
   class Iter;
 
   uint32_t NumRestarts() const;

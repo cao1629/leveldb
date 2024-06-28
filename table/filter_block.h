@@ -34,11 +34,14 @@ class FilterBlockBuilder {
   FilterBlockBuilder(const FilterBlockBuilder&) = delete;
   FilterBlockBuilder& operator=(const FilterBlockBuilder&) = delete;
 
+  // block_offset: the offset of the incoming StartBlockdata block
+  // generate filters for the previously added data
   void StartBlock(uint64_t block_offset);
   void AddKey(const Slice& key);
   Slice Finish();
 
  private:
+  // keys, strart_ -> CreateFilter(&tmp_keys[0], n, &result)
   void GenerateFilter();
 
   const FilterPolicy* policy_;
@@ -46,7 +49,7 @@ class FilterBlockBuilder {
   std::vector<size_t> start_;    // Starting index in keys_ of each key
   std::string result_;           // Filter data computed so far
   std::vector<Slice> tmp_keys_;  // policy_->CreateFilter() argument
-  std::vector<uint32_t> filter_offsets_;
+  std::vector<uint32_t> filter_offsets_; // offset of each filter inside a filter block
 };
 
 class FilterBlockReader {

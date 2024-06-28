@@ -117,6 +117,8 @@ class InternalKeyComparator : public Comparator {
 };
 
 // Filter policy wrapper that converts from internal keys to user keys
+// An implementation of FilterPolicy
+// apply bloom filter on InternalKey
 class InternalFilterPolicy : public FilterPolicy {
  private:
   const FilterPolicy* const user_policy_;

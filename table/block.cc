@@ -19,6 +19,7 @@ namespace leveldb {
 
 inline uint32_t Block::NumRestarts() const {
   assert(size_ >= sizeof(uint32_t));
+  // size of the restart array
   return DecodeFixed32(data_ + size_ - sizeof(uint32_t));
 }
 
@@ -88,7 +89,7 @@ class Block::Iter : public Iterator {
   uint32_t current_;
   uint32_t restart_index_;  // Index of restart block in which current_ falls
   std::string key_;
-  Slice value_;
+  Slice value_; // the whole entry
   Status status_;
 
   inline int Compare(const Slice& a, const Slice& b) const {
@@ -100,12 +101,14 @@ class Block::Iter : public Iterator {
     return (value_.data() + value_.size()) - data_;
   }
 
+  // offset of the index-th restart point
   uint32_t GetRestartPoint(uint32_t index) {
     assert(index < num_restarts_);
     return DecodeFixed32(data_ + restarts_ + index * sizeof(uint32_t));
   }
 
-  // update key_, value_, restart_index_
+  // clear key_
+  // update restart_index_ and value_
   // current_ will be updated later
   void SeekToRestartPoint(uint32_t index) {
     key_.clear();
@@ -172,7 +175,7 @@ class Block::Iter : public Iterator {
     } while (ParseNextKey() && NextEntryOffset() < original);
   }
 
-  // update key_, value_, current_
+  // update current_, key_, and value_
   void Seek(const Slice& target) override {
     // Binary search in restart array to find the last restart point
     // with a key < target
@@ -262,6 +265,7 @@ class Block::Iter : public Iterator {
 
   // update current_, key_, value_
   // update restart_index_ if necessary
+  // After SeekToRestartPoint(), key is empty, value_ is Slice(restart point, 0)
   bool ParseNextKey() {
     // update current_ to the next entry offset
     current_ = NextEntryOffset();

@@ -113,10 +113,15 @@ void TableBuilder::Add(const Slice& key, const Slice& value) {
   // pending: index is waiting to be written into index_block
   if (r->pending_index_entry) {
     assert(r->data_block.empty());
+
+    // update last_key
     r->options.comparator->FindShortestSeparator(&r->last_key, key);
+
+    // insert an entry into index_block
     std::string handle_encoding;
     r->pending_handle.EncodeTo(&handle_encoding);
     r->index_block.Add(r->last_key, Slice(handle_encoding));
+    // reset pending_index_entry
     r->pending_index_entry = false;
   }
 
@@ -128,9 +133,11 @@ void TableBuilder::Add(const Slice& key, const Slice& value) {
   r->num_entries++;
   r->data_block.Add(key, value);
 
+  // size before compression
   const size_t estimated_block_size = r->data_block.CurrentSizeEstimate();
   // the data block is full, flush it
   if (estimated_block_size >= r->options.block_size) {
+    // 
     Flush();
   }
 }
@@ -159,7 +166,7 @@ void TableBuilder::Flush() {
 }
 
 // write the block to the disk
-// get the BlockHandle of the block and set it to pending_handle ()
+// update r->pending_handle
 void TableBuilder::WriteBlock(BlockBuilder* block, BlockHandle* handle) {
   // File format contains a sequence of blocks where each block has:
   //    block_data: uint8[n]
@@ -168,7 +175,7 @@ void TableBuilder::WriteBlock(BlockBuilder* block, BlockHandle* handle) {
   assert(ok());
   Rep* r = rep_;
 
-  // get a complete data block, which is stored in a Slice
+  // BlockBuilder$buffer_ -> Slice
   Slice raw = block->Finish();
 
   // compression
@@ -209,13 +216,16 @@ void TableBuilder::WriteBlock(BlockBuilder* block, BlockHandle* handle) {
       break;
     }
   }
+  
+  // write the compressed block to the file, and update "handle", which is r->pending_handle
   WriteRawBlock(block_contents, type, handle);
   r->compressed_output.clear();
 
-  // the BlockBuilder will build a new data block
+  // the BlockBuilder will build a nHandle对象，可以理解为索引的索引，通过Footer可以直接定位到mew data block
   block->Reset();
 }
 
+// compressed data + type + crc32
 void TableBuilder::WriteRawBlock(const Slice& block_contents,
                                  CompressionType type, BlockHandle* handle) {
   Rep* r = rep_;
@@ -246,6 +256,7 @@ Status TableBuilder::Finish() {
   BlockHandle filter_block_handle, metaindex_block_handle, index_block_handle;
 
   // Write filter block
+  // do not compress the filter block
   if (ok() && r->filter_block != nullptr) {
     WriteRawBlock(r->filter_block->Finish(), kNoCompression,
                   &filter_block_handle);

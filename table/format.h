@@ -20,6 +20,8 @@ struct ReadOptions;
 
 // BlockHandle is a pointer to the extent of a file that stores a data
 // block or a meta block.
+//
+// file + BlockHandle = Block
 class BlockHandle {
  public:
   // Maximum encoding length of a BlockHandle
@@ -36,6 +38,7 @@ class BlockHandle {
   uint64_t size() const { return size_; }
   void set_size(uint64_t size) { size_ = size; }
 
+  // encode offset_ and size_ into a string
   void EncodeTo(std::string* dst) const;
   Status DecodeFrom(Slice* input);
 
@@ -91,6 +94,8 @@ struct BlockContents {
 
 // Read the block identified by "handle" from "file".  On failure
 // return non-OK.  On success fill *result and return OK.
+//
+// file + BlockHandle -> BlockContents
 Status ReadBlock(RandomAccessFile* file, const ReadOptions& options,
                  const BlockHandle& handle, BlockContents* result);
 

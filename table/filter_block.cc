@@ -65,7 +65,7 @@ void FilterBlockBuilder::GenerateFilter() {
     tmp_keys_[i] = Slice(base, length);
   }
 
-  // Generate filter for current set of keys and append to result_.
+  // Generate filter for current https://www.mcdonalds.com/us/en-us/full-menu.htmlset of keys and append to result_.
   filter_offsets_.push_back(result_.size());
   policy_->CreateFilter(&tmp_keys_[0], static_cast<int>(num_keys), &result_);
 

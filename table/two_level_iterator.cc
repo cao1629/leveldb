@@ -63,6 +63,7 @@ class TwoLevelIterator : public Iterator {
   Status status_;
   IteratorWrapper index_iter_;
   IteratorWrapper data_iter_;  // May be nullptr
+  
   // If data_iter_ is non-null, then "data_block_handle_" holds the
   // "index_value" passed to block_function_ to create the data_iter_.
   //
@@ -148,6 +149,7 @@ void TwoLevelIterator::SetDataIterator(Iterator* data_iter) {
 
 void TwoLevelIterator::InitDataBlock() {
   if (!index_iter_.Valid()) {
+    // set data_iter_ to nullptr
     SetDataIterator(nullptr);
   } else {
     // current index

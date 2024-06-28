@@ -75,7 +75,7 @@ class IteratorWrapper {
   }
 
  private:
-  // update key_ according to iter_.key()
+  // update key_ and valid_ in this IteratorWrapper
   void Update() {
     valid_ = iter_->Valid();
     if (valid_) {
@@ -84,7 +84,7 @@ class IteratorWrapper {
   }
 
   Iterator* iter_;
-  bool valid_;
+  bool valid_; // iter_ is nullptr, or iter_Valid() is false
   Slice key_;
 };
 
