@@ -63,7 +63,7 @@ class TwoLevelIterator : public Iterator {
   Status status_;
   IteratorWrapper index_iter_;
   IteratorWrapper data_iter_;  // May be nullptr
-  
+
   // If data_iter_ is non-null, then "data_block_handle_" holds the
   // "index_value" passed to block_function_ to create the data_iter_.
   //
@@ -116,6 +116,7 @@ void TwoLevelIterator::Prev() {
   SkipEmptyDataBlocksBackward();
 }
 
+// two purposes: (1)
 void TwoLevelIterator::SkipEmptyDataBlocksForward() {
   while (data_iter_.iter() == nullptr || !data_iter_.Valid()) {
     // Move to next block
@@ -147,6 +148,7 @@ void TwoLevelIterator::SetDataIterator(Iterator* data_iter) {
   data_iter_.Set(data_iter);
 }
 
+// make sure that data_iter_ is correct
 void TwoLevelIterator::InitDataBlock() {
   if (!index_iter_.Valid()) {
     // set data_iter_ to nullptr
@@ -159,8 +161,7 @@ void TwoLevelIterator::InitDataBlock() {
       // data_iter_ is already constructed with this iterator, so
       // no need to change anything
     } else {
-      // arg_ is a Table object
-      // index iterator + Table -> a data iterator
+      // index iterator + Table (arg_) -> a data iterator
       Iterator* iter = (*block_function_)(arg_, options_, handle);
       data_block_handle_.assign(handle.data(), handle.size());
       SetDataIterator(iter);

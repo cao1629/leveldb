@@ -36,7 +36,7 @@ struct Table::Rep {
 };
 
 
-// Read a table from disks to memory (Table object)
+// Read a table from disk to memory (Table object)
 Status Table::Open(const Options& options, RandomAccessFile* file,
                    uint64_t size, Table** table) {
   *table = nullptr;
@@ -167,6 +167,7 @@ Iterator* Table::BlockReader(void* arg, const ReadOptions& options,
   // We intentionally allow extra stuff in index_value so that we
   // can add more features in the future.
 
+  // populate "block"
   if (s.ok()) {
     BlockContents contents;
     if (block_cache != nullptr) {
@@ -195,6 +196,7 @@ Iterator* Table::BlockReader(void* arg, const ReadOptions& options,
     }
   }
 
+  // obtain an iterator of "block"
   Iterator* iter;
   if (block != nullptr) {
     iter = block->NewIterator(table->rep_->options.comparator);
