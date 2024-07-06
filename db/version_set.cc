@@ -200,6 +200,8 @@ class Version::LevelFileNumIterator : public Iterator {
 
  private:
   const InternalKeyComparator icmp_;
+
+  // files on one level
   const std::vector<FileMetaData*>* const flist_;
   uint32_t index_;
 
@@ -207,6 +209,7 @@ class Version::LevelFileNumIterator : public Iterator {
   mutable char value_buf_[16];
 };
 
+// file number + file size -> TableCache$NewIterator
 static Iterator* GetFileIterator(void* arg, const ReadOptions& options,
                                  const Slice& file_value) {
   TableCache* cache = reinterpret_cast<TableCache*>(arg);
@@ -219,6 +222,10 @@ static Iterator* GetFileIterator(void* arg, const ReadOptions& options,
   }
 }
 
+// TwoLevelIterator: LevelFileNumIterator + GetFileIterator
+// GetFileIterator: this is a BlockFunction(void *arg, options, Slice 1st-level-iterator-value)
+// arg: vset_->table_cache_   2rd-level iterator is an iterator of TableCache
+// Slice 1st-level-iteator-value    value of LevelFileNumIterator, which is file number + file size
 Iterator* Version::NewConcatenatingIterator(const ReadOptions& options,
                                             int level) const {
   return NewTwoLevelIterator(

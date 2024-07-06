@@ -11,6 +11,7 @@
 
 namespace leveldb {
 
+
 struct TableAndFile {
   RandomAccessFile* file;
   Table* table;
@@ -38,14 +39,22 @@ TableCache::TableCache(const std::string& dbname, const Options& options,
 
 TableCache::~TableCache() { delete cache_; }
 
+// file number + file size -> find a Table and store it in Cache::Handle
 Status TableCache::FindTable(uint64_t file_number, uint64_t file_size,
                              Cache::Handle** handle) {
   Status s;
+
+  // key
   char buf[sizeof(file_number)];
   EncodeFixed64(buf, file_number);
   Slice key(buf, sizeof(buf));
+
+  // search
   *handle = cache_->Lookup(key);
+
+  // cache miss
   if (*handle == nullptr) {
+    // read Table from file
     std::string fname = TableFileName(dbname_, file_number);
     RandomAccessFile* file = nullptr;
     Table* table = nullptr;
@@ -66,6 +75,7 @@ Status TableCache::FindTable(uint64_t file_number, uint64_t file_size,
       // We do not cache error results so that if the error is transient,
       // or somebody repairs the file, we recover automatically.
     } else {
+      // insert a new entry into the cache
       TableAndFile* tf = new TableAndFile;
       tf->file = file;
       tf->table = table;
@@ -75,6 +85,7 @@ Status TableCache::FindTable(uint64_t file_number, uint64_t file_size,
   return s;
 }
 
+// file number + file size -> Table -> Table$Iterator
 Iterator* TableCache::NewIterator(const ReadOptions& options,
                                   uint64_t file_number, uint64_t file_size,
                                   Table** tableptr) {
