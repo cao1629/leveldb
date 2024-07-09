@@ -149,6 +149,9 @@ class Version {
   VersionSet* vset_;  // VersionSet to which this Version belongs
   Version* next_;     // Next version in linked list
   Version* prev_;     // Previous version in linked list
+
+  // When refs_ becomes 0, it indicates that no clients are using this version.
+  // Thus, this version no longer needs to exist (we don't need this version anymore)
   int refs_;          // Number of live refs to this version
 
   // List of files per level
