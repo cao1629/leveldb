@@ -217,7 +217,7 @@ class LookupKey {
   const char* start_;
   const char* kstart_;
   const char* end_;
-  char space_[200];  // Avoid allocation for short keys
+  char space_[200];  // Avoid heap allocation for short keys
 };
 
 inline LookupKey::~LookupKey() {

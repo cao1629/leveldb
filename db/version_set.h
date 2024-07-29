@@ -109,6 +109,7 @@ class Version {
   int PickLevelForMemTableOutput(const Slice& smallest_user_key,
                                  const Slice& largest_user_key);
 
+  // Number of files in a specific level
   int NumFiles(int level) const { return files_[level].size(); }
 
   // Return a human readable string that describes this version's contents.
@@ -120,6 +121,7 @@ class Version {
 
   class LevelFileNumIterator;
 
+  // Create a new Version which belongs to vset
   explicit Version(VersionSet* vset)
       : vset_(vset),
         next_(this),
@@ -302,7 +304,10 @@ class VersionSet {
   const Options* const options_;
   TableCache* const table_cache_;
   const InternalKeyComparator icmp_;
+
+  // next file number of sstable, manifest, or wal files
   uint64_t next_file_number_;
+
   uint64_t manifest_file_number_;
   uint64_t last_sequence_;
   uint64_t log_number_;
@@ -311,6 +316,7 @@ class VersionSet {
   // Opened lazily
   WritableFile* descriptor_file_;
   log::Writer* descriptor_log_;
+
   Version dummy_versions_;  // Head of circular doubly-linked list of versions.
   Version* current_;        // == dummy_versions_.prev_
 

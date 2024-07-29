@@ -38,6 +38,7 @@ class TableCache {
   Iterator* NewIterator(const ReadOptions& options, uint64_t file_number,
                         uint64_t file_size, Table** tableptr = nullptr);
 
+  // Slice &k is an internal key
   // If a seek to internal key "k" in specified file finds an entry,
   // call (*handle_result)(arg, found_key, found_value).
   Status Get(const ReadOptions& options, uint64_t file_number,

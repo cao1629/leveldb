@@ -60,6 +60,8 @@ class VersionEdit {
   // Add the specified file at the specified number.
   // REQUIRES: This version has not been saved (see VersionSet::SaveTo)
   // REQUIRES: "smallest" and "largest" are smallest and largest keys in file
+  //
+  // Build a FileMetaData, and then insert (level, FileMetaData)
   void AddFile(int level, uint64_t file, uint64_t file_size,
                const InternalKey& smallest, const InternalKey& largest) {
     FileMetaData f;
@@ -83,8 +85,6 @@ class VersionEdit {
  private:
   friend class VersionSet;
 
-  typedef std::set<std::pair<int, uint64_t>> DeletedFileSet;
-
   std::string comparator_;
   uint64_t log_number_;
   uint64_t prev_log_number_;
@@ -96,8 +96,14 @@ class VersionEdit {
   bool has_next_file_number_;
   bool has_last_sequence_;
 
+  // (level, InternalKey)
   std::vector<std::pair<int, InternalKey>> compact_pointers_;
+
+  // (level, file number)
+  typedef std::set<std::pair<int, uint64_t>> DeletedFileSet;
   DeletedFileSet deleted_files_;
+
+  // (level, FileMetaData)
   std::vector<std::pair<int, FileMetaData>> new_files_;
 };
 

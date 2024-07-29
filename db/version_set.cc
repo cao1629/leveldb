@@ -155,9 +155,9 @@ bool SomeFileOverlapsRange(const InternalKeyComparator& icmp,
   return !BeforeFile(ucmp, largest_user_key, files[index]);
 }
 
-// An internal iterator.  For a given version/level pair, yields
-// information about the files in the level.  For a given entry, key()
-// is the largest key that occurs in the file, and value() is an
+// An internal iterator.  
+// For a given version/level pair, yields information about the files in the level.  
+// For a given entry, key() is the largest key that occurs in the file, and value() is an
 // 16-byte value containing the file number and file size, both
 // encoded using EncodeFixed64.
 class Version::LevelFileNumIterator : public Iterator {
@@ -209,7 +209,8 @@ class Version::LevelFileNumIterator : public Iterator {
   mutable char value_buf_[16];
 };
 
-// file number + file size -> TableCache$NewIterator
+// file_value: file number + file size
+// TableCache + file number + file size -> TableCache$NewIterator
 static Iterator* GetFileIterator(void* arg, const ReadOptions& options,
                                  const Slice& file_value) {
   TableCache* cache = reinterpret_cast<TableCache*>(arg);
@@ -222,9 +223,12 @@ static Iterator* GetFileIterator(void* arg, const ReadOptions& options,
   }
 }
 
-// TwoLevelIterator: LevelFileNumIterator + GetFileIterator
+// TwoLevelIterator: 
+//    1 - LevelFileNumIterator  
+//     2- GetFileIterator
+//
 // GetFileIterator: this is a BlockFunction(void *arg, options, Slice 1st-level-iterator-value)
-// arg: vset_->table_cache_   2rd-level iterator is an iterator of TableCache
+// arg: vset_->table_cache_         2rd-level iterator is an iterator of TableCache
 // Slice 1st-level-iteator-value    value of LevelFileNumIterator, which is file number + file size
 Iterator* Version::NewConcatenatingIterator(const ReadOptions& options,
                                             int level) const {
@@ -576,6 +580,7 @@ std::string Version::DebugString() const {
 class VersionSet::Builder {
  private:
   // Helper to sort by v->files_[file_number].smallest
+  // Compare two sstable files: smallest key first, then file number
   struct BySmallestKey {
     const InternalKeyComparator* internal_comparator;
 
@@ -591,6 +596,8 @@ class VersionSet::Builder {
   };
 
   typedef std::set<FileMetaData*, BySmallestKey> FileSet;
+
+  // state of each level: files to be added and deleted
   struct LevelState {
     std::set<uint64_t> deleted_files;
     FileSet* added_files;
@@ -633,6 +640,7 @@ class VersionSet::Builder {
   }
 
   // Apply all of the edits in *edit to the current state.
+  // Apply VersionEdit to this Builder
   void Apply(const VersionEdit* edit) {
     // Update compaction pointers
     for (size_t i = 0; i < edit->compact_pointers_.size(); i++) {
@@ -676,6 +684,7 @@ class VersionSet::Builder {
   }
 
   // Save the current state in *v.
+  // information in this Builder -> new Version
   void SaveTo(Version* v) {
     BySmallestKey cmp;
     cmp.internal_comparator = &vset_->icmp_;
@@ -692,6 +701,8 @@ class VersionSet::Builder {
         for (std::vector<FileMetaData*>::const_iterator bpos =
                  std::upper_bound(base_iter, base_end, added_file, cmp);
              base_iter != bpos; ++base_iter) {
+
+          // if this file is to be deleted, do not add it to the new Version
           MaybeAddFile(v, level, *base_iter);
         }
 
@@ -745,10 +756,10 @@ VersionSet::VersionSet(const std::string& dbname, const Options* options,
       options_(options),
       table_cache_(table_cache),
       icmp_(*cmp),
-      next_file_number_(2),
+      next_file_number_(2), // sstable file
       manifest_file_number_(0),  // Filled by Recover()
       last_sequence_(0),
-      log_number_(0),
+      log_number_(0),   // log file
       prev_log_number_(0),
       descriptor_file_(nullptr),
       descriptor_log_(nullptr),
@@ -781,6 +792,7 @@ void VersionSet::AppendVersion(Version* v) {
   v->next_->prev_ = v;
 }
 
+
 Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
   if (edit->has_log_number_) {
     assert(edit->log_number_ >= log_number_);
@@ -808,6 +820,8 @@ Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
   // a temporary file that contains a snapshot of the current version.
   std::string new_manifest_file;
   Status s;
+
+  // If no manifest file, build a manifest file from the current VersionSet
   if (descriptor_log_ == nullptr) {
     // No reason to unlock *mu here since we only hit this path in the
     // first call to LogAndApply (when opening the database).
@@ -816,11 +830,13 @@ Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
     s = env_->NewWritableFile(new_manifest_file, &descriptor_file_);
     if (s.ok()) {
       descriptor_log_ = new log::Writer(descriptor_file_);
+
       s = WriteSnapshot(descriptor_log_);
     }
   }
 
   // Unlock during expensive MANIFEST log write
+  // Apply the VersionEdit to the manifest file
   {
     mu->Unlock();
 
@@ -847,6 +863,7 @@ Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
   }
 
   // Install the new version
+  // Insert the new Version into the doubly linked list
   if (s.ok()) {
     AppendVersion(v);
     log_number_ = edit->log_number_;
@@ -865,6 +882,7 @@ Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
   return s;
 }
 
+// CURRENT -> manifest -> Version -> Add this Version into VersionSet
 Status VersionSet::Recover(bool* save_manifest) {
   struct LogReporter : public log::Reader::Reporter {
     Status* status;
@@ -884,7 +902,10 @@ Status VersionSet::Recover(bool* save_manifest) {
   }
   current.resize(current.size() - 1);
 
+  // the manifest file name to which CURRENT refers to
   std::string dscname = dbname_ + "/" + current;
+
+  // PosixSequenceFile, sequential reading
   SequentialFile* file;
   s = env_->NewSequentialFile(dscname, &file);
   if (!s.ok()) {
@@ -895,6 +916,7 @@ Status VersionSet::Recover(bool* save_manifest) {
     return s;
   }
 
+  // Build VersionSet with the manifest file
   bool have_log_number = false;
   bool have_prev_log_number = false;
   bool have_next_file = false;
@@ -915,6 +937,8 @@ Status VersionSet::Recover(bool* save_manifest) {
     std::string scratch;
     while (reader.ReadRecord(&record, &scratch) && s.ok()) {
       ++read_records;
+
+      // VersionEdit
       VersionEdit edit;
       s = edit.DecodeFrom(record);
       if (s.ok()) {
@@ -926,6 +950,7 @@ Status VersionSet::Recover(bool* save_manifest) {
         }
       }
 
+      // update VersionSet$Builder
       if (s.ok()) {
         builder.Apply(&edit);
       }
@@ -1073,6 +1098,7 @@ void VersionSet::Finalize(Version* v) {
   v->compaction_score_ = best_score;
 }
 
+// current_ -> VersionEdit -> manifest
 Status VersionSet::WriteSnapshot(log::Writer* log) {
   // TODO: Break up into multiple records to reduce memory usage on recovery?
 

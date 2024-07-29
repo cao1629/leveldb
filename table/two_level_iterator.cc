@@ -67,7 +67,7 @@ class TwoLevelIterator : public Iterator {
   // If data_iter_ is non-null, then "data_block_handle_" holds the
   // "index_value" passed to block_function_ to create the data_iter_.
   //
-  // we first use index_iter_. to find the right block
+  // we first use index_itess. to find the right block
   // data_block_handle_ holds the index we used to find the right block
   std::string data_block_handle_;
 };

@@ -120,6 +120,7 @@ bool ParseFileName(const std::string& filename, uint64_t* number,
   return true;
 }
 
+// Create db/CURRENT, and record the current manifest file name on it
 Status SetCurrentFile(Env* env, const std::string& dbname,
                       uint64_t descriptor_number) {
   // Remove leading "dbname/" and add newline to manifest file name
@@ -127,6 +128,8 @@ Status SetCurrentFile(Env* env, const std::string& dbname,
   Slice contents = manifest;
   assert(contents.starts_with(dbname + "/"));
   contents.remove_prefix(dbname.size() + 1);
+
+  // dbname/00001/dbtmp
   std::string tmp = TempFileName(dbname, descriptor_number);
   Status s = WriteStringToFileSync(env, contents.ToString() + "\n", tmp);
   if (s.ok()) {

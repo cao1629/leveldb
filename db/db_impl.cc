@@ -123,6 +123,7 @@ static int TableCacheSize(const Options& sanitized_options) {
   return sanitized_options.max_open_files - kNumNonTableCacheFiles;
 }
 
+
 DBImpl::DBImpl(const Options& raw_options, const std::string& dbname)
     : env_(raw_options.env),
       internal_comparator_(raw_options.comparator),
@@ -182,15 +183,23 @@ Status DBImpl::NewDB() {
   VersionEdit new_db;
   new_db.SetComparatorName(user_comparator()->Name());
   new_db.SetLogNumber(0);
+
+  // why 2?
+  // manifest is 1
   new_db.SetNextFile(2);
   new_db.SetLastSequence(0);
 
+  // Create a Manifest file: dbname/MANIFEST-000001
   const std::string manifest = DescriptorFileName(dbname_, 1);
   WritableFile* file;
+
+  // PosixWritableFile (append writing)
   Status s = env_->NewWritableFile(manifest, &file);
   if (!s.ok()) {
     return s;
   }
+
+
   {
     log::Writer log(file);
     std::string record;
@@ -203,6 +212,7 @@ Status DBImpl::NewDB() {
       s = file->Close();
     }
   }
+
   delete file;
   if (s.ok()) {
     // Make "CURRENT" file that points to the new manifest file.
@@ -302,6 +312,8 @@ Status DBImpl::Recover(VersionEdit* edit, bool* save_manifest) {
     return s;
   }
 
+  // looking for dbname_/CURRENT
+  // if not found, this dbname doesn't exist -> NewDB()
   if (!env_->FileExists(CurrentFileName(dbname_))) {
     if (options_.create_if_missing) {
       Log(options_.info_log, "Creating DB %s since it was missing.",
@@ -1498,6 +1510,8 @@ Status DB::Open(const Options& options, const std::string& dbname, DB** dbptr) {
   *dbptr = nullptr;
 
   DBImpl* impl = new DBImpl(options, dbname);
+
+  // LOCK!!!!!!!!
   impl->mutex_.Lock();
   VersionEdit edit;
   // Recover handles create_if_missing, error_if_exists
@@ -1528,6 +1542,9 @@ Status DB::Open(const Options& options, const std::string& dbname, DB** dbptr) {
     impl->MaybeScheduleCompaction();
   }
   impl->mutex_.Unlock();
+  // UNLOCK!!!!
+
+
   if (s.ok()) {
     assert(impl->mem_ != nullptr);
     *dbptr = impl;

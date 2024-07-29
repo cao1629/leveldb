@@ -85,7 +85,7 @@ Status TableCache::FindTable(uint64_t file_number, uint64_t file_size,
   return s;
 }
 
-// file number + file size -> Table -> Table$Iterator
+// file number + file size -> Table -> Table$Iterator which is a TwoLevelIterator
 Iterator* TableCache::NewIterator(const ReadOptions& options,
                                   uint64_t file_number, uint64_t file_size,
                                   Table** tableptr) {
