@@ -313,7 +313,7 @@ Status DBImpl::Recover(VersionEdit* edit, bool* save_manifest) {
   }
 
   // looking for dbname_/CURRENT
-  // if not found, this dbname doesn't exist -> NewDB()
+  // if not found, this db doesn't exist -> NewDB()
   if (!env_->FileExists(CurrentFileName(dbname_))) {
     if (options_.create_if_missing) {
       Log(options_.info_log, "Creating DB %s since it was missing.",
@@ -332,6 +332,8 @@ Status DBImpl::Recover(VersionEdit* edit, bool* save_manifest) {
                                      "exists (error_if_exists is true)");
     }
   }
+
+  // at this point, there must be a CURRENT file
 
   s = versions_->Recover(save_manifest);
   if (!s.ok()) {

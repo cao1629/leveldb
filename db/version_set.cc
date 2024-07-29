@@ -891,7 +891,7 @@ Status VersionSet::Recover(bool* save_manifest) {
     }
   };
 
-  // Read "CURRENT" file, which contains a pointer to the current manifest file
+  // Read CURRENT file, which contains a pointer to the current manifest file
   std::string current;
   Status s = ReadFileToString(env_, CurrentFileName(dbname_), &current);
   if (!s.ok()) {

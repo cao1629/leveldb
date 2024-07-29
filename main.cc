@@ -1,7 +1,6 @@
 #include <iostream>
 #include "leveldb/db.h"
 
-
 int main() {
   leveldb::DB *db;
   leveldb::Options options;
