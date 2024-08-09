@@ -599,7 +599,9 @@ class VersionSet::Builder {
 
   // state of each level: files to be added and deleted
   struct LevelState {
+    // no need to store deleted_files in order
     std::set<uint64_t> deleted_files;
+
     FileSet* added_files;
   };
 
@@ -822,6 +824,7 @@ Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
   Status s;
 
   // If no manifest file, build a manifest file from the current VersionSet
+  // at this point, the new Version has not been installed. So WriteSnapshot() writes the old version
   if (descriptor_log_ == nullptr) {
     // No reason to unlock *mu here since we only hit this path in the
     // first call to LogAndApply (when opening the database).
@@ -931,10 +934,14 @@ Status VersionSet::Recover(bool* save_manifest) {
   {
     LogReporter reporter;
     reporter.status = &s;
+
+    // read manifest file
     log::Reader reader(file, &reporter, true /*checksum*/,
                        0 /*initial_offset*/);
     Slice record;
     std::string scratch;
+
+    // each record in the manifest file represents a VersionEdit
     while (reader.ReadRecord(&record, &scratch) && s.ok()) {
       ++read_records;
 
@@ -1098,7 +1105,7 @@ void VersionSet::Finalize(Version* v) {
   v->compaction_score_ = best_score;
 }
 
-// current_ -> VersionEdit -> manifest
+// encode current version to a record, and then append it to manifest file
 Status VersionSet::WriteSnapshot(log::Writer* log) {
   // TODO: Break up into multiple records to reduce memory usage on recovery?
 
