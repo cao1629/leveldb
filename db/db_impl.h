@@ -5,7 +5,7 @@
 #ifndef STORAGE_LEVELDB_DB_DB_IMPL_H_
 #define STORAGE_LEVELDB_DB_DB_IMPL_H_
 
-// coming back
+
 #include <atomic>
 #include <deque>
 #include <set>
