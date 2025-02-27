@@ -35,6 +35,7 @@
 #include "util/logging.h"
 #include "util/mutexlock.h"
 
+// Hello, world!
 namespace leveldb {
 
 const int kNumNonTableCacheFiles = 10;
