@@ -40,6 +40,7 @@ class Arena {
 
   // Allocation state
   char* alloc_ptr_;   // the first byte of newly allocated space
+
   size_t alloc_bytes_remaining_;  // remaining bytes of the current block
 
   // Array of new[] allocated memory blocks
@@ -57,12 +58,14 @@ inline char* Arena::Allocate(size_t bytes) {
   // 0-byte allocations, so we disallow them here (we don't need
   // them for our internal use).
   assert(bytes > 0);
+  // If the requested memory is less than the remaining memory in the current block
   if (bytes <= alloc_bytes_remaining_) {
     char* result = alloc_ptr_;
     alloc_ptr_ += bytes;
     alloc_bytes_remaining_ -= bytes;
     return result;
   }
+  // Allocate "bytes" bytes of memory
   return AllocateFallback(bytes);
 }
 

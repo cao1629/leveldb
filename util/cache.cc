@@ -17,6 +17,7 @@ namespace leveldb {
 
 Cache::~Cache() {}
 
+
 namespace {
 
 // LRU cache implementation
@@ -43,9 +44,14 @@ namespace {
 struct LRUHandle {
   void* value;
   void (*deleter)(const Slice&, void* value);
+
+  // in each bucket of in a HandleTable, next_hash is a pointer to the next
   LRUHandle* next_hash;
+
+  // used in in-used and LRU
   LRUHandle* next;
   LRUHandle* prev;
+
   size_t charge;  // TODO(opt): Only allow uint32_t?
   size_t key_length;
   bool in_cache;     // Whether entry is in the cache.
@@ -80,8 +86,11 @@ class HandleTable {
     // If h->key() already exists, *ptr is a LRUHandle pointer which points to the existing entry
     // **ptr is the address of the next_hash_ member of the previous node
     // *ptr is the value of the next_hash_member of the previous node
+
+
     LRUHandle** ptr = FindPointer(h->key(), h->hash);
     LRUHandle* old = *ptr;
+
     // old == nullptr: h->key() doesn't exist
     // old != nullptr: h->key() already exists
     h->next_hash = (old == nullptr ? nullptr : old->next_hash);
@@ -110,21 +119,24 @@ class HandleTable {
  private:
   // The table consists of an array of buckets where each bucket is
   // a linked list of cache entries that hash into the bucket.
-  uint32_t length_;
-  uint32_t elems_;
-  LRUHandle** list_;
 
-  // Return a pointer to slot that points to a cache entry that
-  // matches key/hash.  If there is no such cache entry, return a
-  // pointer to the trailing slot in the corresponding linked list.
+  uint32_t length_;   // number of buckets
+  uint32_t elems_;    // number of elements in the table
+  LRUHandle** list_;  // an array of dummy LRUHandle pointers
+
+
   LRUHandle** FindPointer(const Slice& key, uint32_t hash) {
+
+    // hash & (length_ - 1) is the index of the bucket
     LRUHandle** ptr = &list_[hash & (length_ - 1)];
     while (*ptr != nullptr && ((*ptr)->hash != hash || key != (*ptr)->key())) {
-      // address of the data member next_hash
       ptr = &(*ptr)->next_hash;
     }
+    // If key already exists, (*ptr) is a LRUHandle pointer which points to the existing entry
+    // If key doesn't exist, (*ptr) is a LRUHandle pointer which points to nullptr, but ptr is an address of this nullptr
     return ptr;
   }
+
 
   void Resize() {
     uint32_t new_length = 4;
@@ -232,6 +244,8 @@ void LRUCache::Ref(LRUHandle* e) {
 void LRUCache::Unref(LRUHandle* e) {
   assert(e->refs > 0);
   e->refs--;
+  // If e->refs == 0, it means that the entry is in lru_ list, and will be not in use anymore.
+  // So, we need to remove it from lru_ list and free it.
   if (e->refs == 0) {  // Deallocate.
     assert(!e->in_cache);
     (*e->deleter)(e->key(), e->value);
@@ -241,6 +255,10 @@ void LRUCache::Unref(LRUHandle* e) {
     LRU_Remove(e);
     LRU_Append(&lru_, e);
   }
+
+  // What if e->in_cache == false && e->refs > 1?
+  // It means that the entry is in use, but not in the hash table.
+  // So it is possible that an entry is in cache, but not in the hash table.
 }
 
 void LRUCache::LRU_Remove(LRUHandle* e) {
@@ -249,7 +267,7 @@ void LRUCache::LRU_Remove(LRUHandle* e) {
 }
 
 void LRUCache::LRU_Append(LRUHandle* list, LRUHandle* e) {
-  // Make "e" newest entry by inserting just before *list
+  // Make "e" the newest entry by inserting just before *list
   e->next = list;
   e->prev = list->prev;
   e->prev->next = e;
@@ -287,6 +305,7 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
   e->hash = hash;
   e->in_cache = false;
   e->refs = 1;  // for the returned handle.
+
   std::memcpy(e->key_data, key.data(), key.size());
 
   if (capacity_ > 0) {
@@ -294,8 +313,11 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
     e->in_cache = true;
     LRU_Append(&in_use_, e);
     usage_ += charge;
-    // If key already exists, erase the old entry
+
+    // If table_.Insert(e) is not nullptr, it means that the key already exists,
+    // so we need to erase the old entry, which is an LRUHandle.
     FinishErase(table_.Insert(e));
+
   } else {  // don't cache. (capacity_==0 is supported and turns off caching.)
     // next is read by key() in an assert, so it must be initialized
     e->next = nullptr;
@@ -315,9 +337,12 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
 }
 
 // If e != nullptr, finish removing *e from the cache; it has already been
-// removed from the hash table.  Return whether e != nullptr.
+// removed from the hash table.
+// Return whether e != nullptr.
 //
-// After removing an entry from the cache, invoke FinishErase to update usage_ and Unref the LRUHandle
+// After inserting a new entry into the hash table, if the key had already existed,
+// we need to deal with the old entry with the same key, so we need to remove it
+// from the cache and update usage_ and Unref the LRUHandle
 bool LRUCache::FinishErase(LRUHandle* e) {
   if (e != nullptr) {
     assert(e->in_cache);

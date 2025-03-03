@@ -24,7 +24,7 @@ char* Arena::AllocateFallback(size_t bytes) {
     char* result = AllocateNewBlock(bytes);
     return result;
   }
-
+  // "bytes" <= kBlockSize / 4
   // We waste the remaining space in the current block.
   alloc_ptr_ = AllocateNewBlock(kBlockSize);
   alloc_bytes_remaining_ = kBlockSize;
@@ -57,7 +57,9 @@ char* Arena::AllocateAligned(size_t bytes) {
 }
 
 char* Arena::AllocateNewBlock(size_t block_bytes) {
+  // Allocate memory
   char* result = new char[block_bytes];
+
   blocks_.push_back(result);
   memory_usage_.fetch_add(block_bytes + sizeof(char*),
                           std::memory_order_relaxed);
