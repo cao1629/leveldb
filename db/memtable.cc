@@ -11,6 +11,7 @@
 
 namespace leveldb {
 
+// "data" starts with a varint32 length prefix
 static Slice GetLengthPrefixedSlice(const char* data) {
   uint32_t len;
   const char* p = data;
@@ -87,7 +88,9 @@ void MemTable::Add(SequenceNumber s, ValueType type, const Slice& key,
   const size_t encoded_len = VarintLength(internal_key_size) +
                              internal_key_size + VarintLength(val_size) +
                              val_size;
+
   char* buf = arena_.Allocate(encoded_len);
+
   char* p = EncodeVarint32(buf, internal_key_size);
   std::memcpy(p, key.data(), key_size);
   p += key_size;
@@ -103,6 +106,7 @@ bool MemTable::Get(const LookupKey& key, std::string* value, Status* s) {
   Slice memkey = key.memtable_key();
   Table::Iterator iter(&table_);
   iter.Seek(memkey.data());
+
   if (iter.Valid()) {
     // entry format is:
     //    klength  varint32
@@ -114,14 +118,23 @@ bool MemTable::Get(const LookupKey& key, std::string* value, Status* s) {
     // sequence number since the Seek() call above should have skipped
     // all entries with overly large sequence numbers.
     const char* entry = iter.key();
+
+    // user key length + 8
     uint32_t key_length;
     const char* key_ptr = GetVarint32Ptr(entry, entry + 5, &key_length);
+
+    // KeyComparator.comparator is an InternalKeyComparator
+    // Only compare the user key part
     if (comparator_.comparator.user_comparator()->Compare(
             Slice(key_ptr, key_length - 8), key.user_key()) == 0) {
       // Correct user key
+
+      // sequence number + type
       const uint64_t tag = DecodeFixed64(key_ptr + key_length - 8);
+
       switch (static_cast<ValueType>(tag & 0xff)) {
         case kTypeValue: {
+          // Read the value
           Slice v = GetLengthPrefixedSlice(key_ptr + key_length);
           value->assign(v.data(), v.size());
           return true;
@@ -133,6 +146,6 @@ bool MemTable::Get(const LookupKey& key, std::string* value, Status* s) {
     }
   }
   return false;
-}
+}`
 
 }  // namespace leveldb

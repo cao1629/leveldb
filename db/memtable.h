@@ -52,7 +52,7 @@ class MemTable {
 
   // Add an entry into memtable that maps key to value at the
   // specified sequence number and with the specified type.
-  // Typically value will be empty if type==kTypeDeletion.
+  // Typically, value will be empty if type==kTypeDeletion.
   void Add(SequenceNumber seq, ValueType type, const Slice& key,
            const Slice& value);
 
@@ -66,11 +66,14 @@ class MemTable {
   friend class MemTableIterator;
   friend class MemTableBackwardIterator;
 
+  // Pass an InternalKeyComparator to the constructor, and store it in the
+  // member variable comparator
   struct KeyComparator {
     const InternalKeyComparator comparator;
     explicit KeyComparator(const InternalKeyComparator& c) : comparator(c) {}
     int operator()(const char* a, const char* b) const;
   };
+
 
   typedef SkipList<const char*, KeyComparator> Table;
 

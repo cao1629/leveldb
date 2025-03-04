@@ -69,11 +69,15 @@ static const SequenceNumber kMaxSequenceNumber = ((0x1ull << 56) - 1);
 struct ParsedInternalKey {
   Slice user_key;
   SequenceNumber sequence;
+
+  // ValueType is 8 bits, so we can pack it into the sequence number.
   ValueType type;
 
   ParsedInternalKey() {}  // Intentionally left uninitialized (for speed)
+
   ParsedInternalKey(const Slice& u, const SequenceNumber& seq, ValueType t)
       : user_key(u), sequence(seq), type(t) {}
+
   std::string DebugString() const;
 };
 
@@ -139,15 +143,19 @@ class InternalKey {
 
  public:
   InternalKey() {}  // Leave rep_ as empty to indicate it is invalid
+
+  // Slice &user_key, SequenceNumber s, ValueType t => ParsedInternalKey => InternalKey
   InternalKey(const Slice& user_key, SequenceNumber s, ValueType t) {
     AppendInternalKey(&rep_, ParsedInternalKey(user_key, s, t));
   }
 
+  // Decode: Slice => rep_
   bool DecodeFrom(const Slice& s) {
     rep_.assign(s.data(), s.size());
     return !rep_.empty();
   }
 
+  // Encode: rep_ => Slice
   Slice Encode() const {
     assert(!rep_.empty());
     return rep_;

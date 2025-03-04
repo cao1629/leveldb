@@ -202,7 +202,7 @@ class LRUCache {
   size_t usage_ GUARDED_BY(mutex_);
 
   // Dummy head of LRU list.
-  // lru.prev is newest entry, lru.next is oldest entry.
+  // lru.prev is the newest entry, lru.next is the oldest entry.
   // Entries have refs==1 and in_cache==true.
   LRUHandle lru_ GUARDED_BY(mutex_);
 
@@ -323,7 +323,7 @@ Cache::Handle* LRUCache::Insert(const Slice& key, uint32_t hash, void* value,
     e->next = nullptr;
   }
 
-  // evict
+  // Evict least-recently-used entries from the lru_ list.
   while (usage_ > capacity_ && lru_.next != &lru_) {
     LRUHandle* old = lru_.next;
     assert(old->refs == 1);
