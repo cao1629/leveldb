@@ -31,8 +31,11 @@ Writer::Writer(WritableFile* dest, uint64_t dest_length)
 
 Writer::~Writer() = default;
 
+
 Status Writer::AddRecord(const Slice& slice) {
   const char* ptr = slice.data();
+
+  // How many bytes are left in the record to be emitted
   size_t left = slice.size();
 
   // Fragment the record if necessary and emit it.  Note that if slice
@@ -41,7 +44,10 @@ Status Writer::AddRecord(const Slice& slice) {
   Status s;
   bool begin = true;
   do {
+
+    // How many bytes of free space are left in the current block
     const int leftover = kBlockSize - block_offset_;
+
     assert(leftover >= 0);
     if (leftover < kHeaderSize) {
       // Switch to a new block
@@ -56,7 +62,10 @@ Status Writer::AddRecord(const Slice& slice) {
     // Invariant: we never leave < kHeaderSize bytes in a block.
     assert(kBlockSize - block_offset_ - kHeaderSize >= 0);
 
+    // How many bytes are left for storing a record without its header
     const size_t avail = kBlockSize - block_offset_ - kHeaderSize;
+
+    // How many bytes of the record can we store in the remaining space
     const size_t fragment_length = (left < avail) ? left : avail;
 
     RecordType type;
@@ -79,6 +88,7 @@ Status Writer::AddRecord(const Slice& slice) {
   return s;
 }
 
+// Given a pointer and a length, append the record to the log file
 Status Writer::EmitPhysicalRecord(RecordType t, const char* ptr,
                                   size_t length) {
   assert(length <= 0xffff);  // Must fit in two bytes
@@ -86,8 +96,13 @@ Status Writer::EmitPhysicalRecord(RecordType t, const char* ptr,
 
   // Format the header
   char buf[kHeaderSize];
+  // buf[0:3] stores crc
+
+  // buf[4:5] stores little endian length
   buf[4] = static_cast<char>(length & 0xff);
   buf[5] = static_cast<char>(length >> 8);
+
+  // buf[6] stores type
   buf[6] = static_cast<char>(t);
 
   // Compute the crc of the record type and the payload.

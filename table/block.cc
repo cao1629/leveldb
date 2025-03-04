@@ -81,15 +81,26 @@ static inline const char* DecodeEntry(const char* p, const char* limit,
 class Block::Iter : public Iterator {
  private:
   const Comparator* const comparator_;
-  const char* const data_;       // underlying block contents
-  uint32_t const restarts_;      // Offset of restart array (list of fixed32)
-  uint32_t const num_restarts_;  // Number of uint32_t entries in restart array
 
-  // current_ is offset in data_ of current entry.  >= restarts_ if !Valid
+  // underlying block contents
+  const char* const data_;
+
+  // Offset of restart array (list of fixed32)
+  uint32_t const restarts_;
+
+  // Number of uint32_t entries in restart array
+  uint32_t const num_restarts_;
+
+  // current_ is the offset in data_ of current entry.
+  // If current_ >= restarts_, then Valid() is false.
   uint32_t current_;
-  uint32_t restart_index_;  // Index of restart block in which current_ falls
+
+  // Index of restart block in which current_ falls
+  uint32_t restart_index_;
+
   std::string key_;
   Slice value_; // the whole entry
+
   Status status_;
 
   inline int Compare(const Slice& a, const Slice& b) const {

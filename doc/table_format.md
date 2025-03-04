@@ -44,7 +44,7 @@ the first key in the successive data block.  The value is the
 BlockHandle for the data block.
 
 5. At the very end of the file is a fixed length footer that contains
-the BlockHandle of the metaindex and index blocks as well as a magic number.
+   the BlockHandle of the metaindex and index blocks as well as a magic number.
 
         metaindex_handle: char[p];     // Block handle for metaindex
         index_handle:     char[q];     // Block handle for index
@@ -79,13 +79,13 @@ The filter block is formatted as follows:
     [filter 2]
     ...
     [filter N-1]
-
+    
     [offset of filter 0]                  : 4 bytes
     [offset of filter 1]                  : 4 bytes
     [offset of filter 2]                  : 4 bytes
     ...
     [offset of filter N-1]                : 4 bytes
-
+    
     [offset of beginning of offset array] : 4 bytes
     lg(base)                              : 1 byte
 
