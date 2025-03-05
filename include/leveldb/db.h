@@ -45,6 +45,7 @@ struct LEVELDB_EXPORT Range {
 // any external synchronization.
 class LEVELDB_EXPORT DB {
  public:
+
   // Open the database with the specified "name".
   // Stores a pointer to a heap-allocated database in *dbptr and returns
   // OK on success.
@@ -142,7 +143,7 @@ class LEVELDB_EXPORT DB {
   //
   // begin==nullptr is treated as a key before all keys in the database.
   // end==nullptr is treated as a key after all keys in the database.
-  // Therefore the following call will compact the entire database:
+  // Therefore, the following call will compact the entire database:
   //    db->CompactRange(nullptr, nullptr);
   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
 };

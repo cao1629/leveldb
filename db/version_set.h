@@ -60,7 +60,11 @@ bool SomeFileOverlapsRange(const InternalKeyComparator& icmp,
 class Version {
  public:
   struct GetStats {
+
+    // Metadata for a file
     FileMetaData* seek_file;
+
+    // At which level the file is
     int seek_file_level;
   };
 
@@ -161,13 +165,16 @@ class Version {
 
   // Next file to compact based on seek stats.
   FileMetaData* file_to_compact_;
+
+
   int file_to_compact_level_;
 
   // Level that should be compacted next and its compaction score.
   // Score < 1 means compaction is not strictly needed.  These fields
   // are initialized by Finalize().
-  double compaction_score_;
   int compaction_level_;
+  double compaction_score_;
+
 };
 
 class VersionSet {
@@ -305,12 +312,18 @@ class VersionSet {
   TableCache* const table_cache_;
   const InternalKeyComparator icmp_;
 
-  // next file number of sstable, manifest, or wal files
+
+  // Next file number of sst, MANIFEST, and WAL files
   uint64_t next_file_number_;
 
+  // Current manifest file number
   uint64_t manifest_file_number_;
+
   uint64_t last_sequence_;
+
+  // Next log file number
   uint64_t log_number_;
+
   uint64_t prev_log_number_;  // 0 or backing store for memtable being compacted
 
   // Opened lazily
