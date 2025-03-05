@@ -19,8 +19,11 @@ namespace leveldb {
 
 class Env;
 
+// One table cache per database
 class TableCache {
  public:
+
+  // "entries" is the maximum number of entries in the cache
   TableCache(const std::string& dbname, const Options& options, int entries);
 
   TableCache(const TableCache&) = delete;
@@ -35,10 +38,12 @@ class TableCache {
   // underlies the returned iterator.  The returned "*tableptr" object is owned
   // by the cache and should not be deleted, and is valid for as long as the
   // returned iterator is live.
+  //
+  // Return a TwoLevelIterator
   Iterator* NewIterator(const ReadOptions& options, uint64_t file_number,
                         uint64_t file_size, Table** tableptr = nullptr);
 
-  // Slice &k is an internal key
+
   // If a seek to internal key "k" in specified file finds an entry,
   // call (*handle_result)(arg, found_key, found_value).
   Status Get(const ReadOptions& options, uint64_t file_number,

@@ -148,7 +148,7 @@ void TwoLevelIterator::SetDataIterator(Iterator* data_iter) {
   data_iter_.Set(data_iter);
 }
 
-// make sure that data_iter_ is correct
+
 void TwoLevelIterator::InitDataBlock() {
   if (!index_iter_.Valid()) {
     // set data_iter_ to nullptr

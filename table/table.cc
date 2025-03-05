@@ -40,16 +40,22 @@ struct Table::Rep {
 Status Table::Open(const Options& options, RandomAccessFile* file,
                    uint64_t size, Table** table) {
   *table = nullptr;
+
   if (size < Footer::kEncodedLength) {
     return Status::Corruption("file is too short to be an sstable");
   }
 
+  // Read the footer
   char footer_space[Footer::kEncodedLength];
   Slice footer_input;
+
+  // Store the last kEncodedLength bytes of the file in footer_space
   Status s = file->Read(size - Footer::kEncodedLength, Footer::kEncodedLength,
                         &footer_input, footer_space);
   if (!s.ok()) return s;
 
+  // Decode the footer
+  // Once we have the footer, we can get metaindex_handle and index_handle
   Footer footer;
   s = footer.DecodeFrom(&footer_input);
   if (!s.ok()) return s;
@@ -60,6 +66,8 @@ Status Table::Open(const Options& options, RandomAccessFile* file,
   if (options.paranoid_checks) {
     opt.verify_checksums = true;
   }
+
+  // Get the index block, and store it in index_block_contents
   s = ReadBlock(file, opt, footer.index_handle(), &index_block_contents);
 
   if (s.ok()) {
@@ -151,23 +159,27 @@ static void ReleaseBlock(void* arg, void* h) {
   cache->Release(handle);
 }
 
-// passed into TwoLevelIterator as a BlockFunction
 // Convert an index iterator value (i.e., an encoded BlockHandle)
 // into an iterator over the contents of the corresponding block.
+// "arg" is a Table*
+// "index_value" is an encoded BlockHandle
 Iterator* Table::BlockReader(void* arg, const ReadOptions& options,
                              const Slice& index_value) {
+
   Table* table = reinterpret_cast<Table*>(arg);
   Cache* block_cache = table->rep_->options.block_cache;
   Block* block = nullptr;
   Cache::Handle* cache_handle = nullptr;
 
+  // Populate "handle"
   BlockHandle handle;
   Slice input = index_value;
   Status s = handle.DecodeFrom(&input);
+
   // We intentionally allow extra stuff in index_value so that we
   // can add more features in the future.
 
-  // populate "block"
+  // Populate "block"
   if (s.ok()) {
     BlockContents contents;
     if (block_cache != nullptr) {
@@ -196,7 +208,7 @@ Iterator* Table::BlockReader(void* arg, const ReadOptions& options,
     }
   }
 
-  // obtain an iterator of "block"
+  // Return an iterator over the contents of the block
   Iterator* iter;
   if (block != nullptr) {
     iter = block->NewIterator(table->rep_->options.comparator);
@@ -210,6 +222,7 @@ Iterator* Table::BlockReader(void* arg, const ReadOptions& options,
   }
   return iter;
 }
+
 
 Iterator* Table::NewIterator(const ReadOptions& options) const {
   return NewTwoLevelIterator(
