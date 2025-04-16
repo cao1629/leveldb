@@ -137,11 +137,13 @@ class PosixSequentialFile final : public SequentialFile {
  public:
   PosixSequentialFile(std::string filename, int fd)
       : fd_(fd), filename_(std::move(filename)) {}
+
   ~PosixSequentialFile() override { close(fd_); }
 
   Status Read(size_t n, Slice* result, char* scratch) override {
     Status status;
     while (true) {
+      // Read up to n bytes to "scratch".
       ::ssize_t read_size = ::read(fd_, scratch, n);
       if (read_size < 0) {  // Read error.
         if (errno == EINTR) {
@@ -224,8 +226,12 @@ class PosixRandomAccessFile final : public RandomAccessFile {
   }
 
  private:
-  const bool has_permanent_fd_;  // If false, the file is opened on every read.
-  const int fd_;                 // -1 if has_permanent_fd_ is false.
+  // If false, the file is opened on every read.
+  // If true, the file is kept open for the lifetime of this object.
+  const bool has_permanent_fd_;
+
+  // -1 if has_permanent_fd_ is false.
+  const int fd_;
   Limiter* const fd_limiter_;
   const std::string filename_;
 };
@@ -331,6 +337,7 @@ class PosixWritableFile final : public WritableFile {
 
   Status Flush() override { return FlushBuffer(); }
 
+  // fsync(): synchronizes the file data and the file metadata to the disk
   Status Sync() override {
     // Ensure new files referred to by the manifest are in the filesystem.
     //
@@ -357,7 +364,9 @@ class PosixWritableFile final : public WritableFile {
     return status;
   }
 
+
   Status WriteUnbuffered(const char* data, size_t size) {
+    // Make sure "size" bytes are written to the file.
     while (size > 0) {
       ssize_t write_result = ::write(fd_, data, size);
       if (write_result < 0) {
@@ -372,6 +381,10 @@ class PosixWritableFile final : public WritableFile {
     return Status::OK();
   }
 
+
+  // If this file is a manifest, ensure that the directory it is in is
+  // synchronized to disk. That is, each file in the directory is synchronized
+  // to disk
   Status SyncDirIfManifest() {
     Status status;
     if (!is_manifest_) {
@@ -537,6 +550,7 @@ class PosixEnv : public Env {
     return Status::OK();
   }
 
+  // Return a PosixMmapReadableFile if mmap is used, otherwise a PosixRandomAccessFile.
   Status NewRandomAccessFile(const std::string& filename,
                              RandomAccessFile** result) override {
     *result = nullptr;

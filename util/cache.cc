@@ -45,10 +45,12 @@ struct LRUHandle {
   void* value;
   void (*deleter)(const Slice&, void* value);
 
-  // in each bucket of in a HandleTable, next_hash is a pointer to the next
+
+  // A LRUHandle's next_hash points to the next LRUHandle in the same bucket
+  // of a hash table
   LRUHandle* next_hash;
 
-  // used in in-used and LRU
+  // The next or previous LRUHandle in either in_use or LRU list
   LRUHandle* next;
   LRUHandle* prev;
 

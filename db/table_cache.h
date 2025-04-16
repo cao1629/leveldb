@@ -19,7 +19,10 @@ namespace leveldb {
 
 class Env;
 
-// One table cache per database
+// One TableCache instance per database.
+// TableCache uses SharedCache as its underlying cache.
+// The entry of the underlying cache is a LRUHandle whose key is a Slice
+// containing the file number, and whose value is a TableAndFile
 class TableCache {
  public:
 
@@ -39,7 +42,7 @@ class TableCache {
   // by the cache and should not be deleted, and is valid for as long as the
   // returned iterator is live.
   //
-  // Return a TwoLevelIterator
+  // Return a TwoLevelIterator.
   Iterator* NewIterator(const ReadOptions& options, uint64_t file_number,
                         uint64_t file_size, Table** tableptr = nullptr);
 
