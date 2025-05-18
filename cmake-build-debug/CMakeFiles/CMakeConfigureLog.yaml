@@ -1,0 +1,1851 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Linux - 6.11.0-24-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_68507/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_68507.dir/build.make CMakeFiles/cmTC_68507.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn'
+        Building C object CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -c /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68507.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_68507.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccdOr4mG.s
+        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 38987c28e967c64056a6454abdef726e
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68507.dir/'
+         as -v --64 -o CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o /tmp/ccdOr4mG.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_68507
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68507.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68507' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68507.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQih3A1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_68507 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 13.3.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQih3A1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_68507 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68507' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68507.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -o cmTC_68507
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_68507/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_68507.dir/build.make CMakeFiles/cmTC_68507.dir/build]
+        ignore line: [make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SSyLbn']
+        ignore line: [Building C object CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -c /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68507.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_68507.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccdOr4mG.s]
+        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 38987c28e967c64056a6454abdef726e]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68507.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o /tmp/ccdOr4mG.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_68507]
+        ignore line: [/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68507.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68507' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68507.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQih3A1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_68507 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccQih3A1.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_68507] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 13.3.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQih3A1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_68507 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_68507.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_44d17/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_44d17.dir/build.make CMakeFiles/cmTC_44d17.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I'
+        Building CXX object CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -c /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_44d17.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_44d17.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccXjDbdX.s
+        GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/13
+         /usr/include/x86_64-linux-gnu/c++/13
+         /usr/include/c++/13/backward
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: c81c05345ce537099dafd5580045814a
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_44d17.dir/'
+         as -v --64 -o CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccXjDbdX.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_44d17
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44d17.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_44d17' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_44d17.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbIs7G1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_44d17 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 13.3.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbIs7G1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_44d17 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_44d17' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_44d17.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_44d17
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/13]
+          add: [/usr/include/x86_64-linux-gnu/c++/13]
+          add: [/usr/include/c++/13/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/13] ==> [/usr/include/c++/13]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/13] ==> [/usr/include/x86_64-linux-gnu/c++/13]
+        collapse include dir [/usr/include/c++/13/backward] ==> [/usr/include/c++/13/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/13;/usr/include/x86_64-linux-gnu/c++/13;/usr/include/c++/13/backward;/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_44d17/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_44d17.dir/build.make CMakeFiles/cmTC_44d17.dir/build]
+        ignore line: [make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-30XZ1I']
+        ignore line: [Building CXX object CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -c /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_44d17.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_44d17.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccXjDbdX.s]
+        ignore line: [GNU C++17 (Ubuntu 13.3.0-6ubuntu2~24.04) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/13"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/13]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/13]
+        ignore line: [ /usr/include/c++/13/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: c81c05345ce537099dafd5580045814a]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_44d17.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccXjDbdX.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_44d17]
+        ignore line: [/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44d17.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-fG75Ri/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_44d17' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_44d17.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbIs7G1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_44d17 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccbIs7G1.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_44d17] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 13.3.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbIs7G1.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_44d17 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_44d17.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:38 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VHJPQr"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VHJPQr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VHJPQr'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_98ada/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_98ada.dir/build.make CMakeFiles/cmTC_98ada.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VHJPQr'
+        Building C object CMakeFiles/cmTC_98ada.dir/CheckIncludeFile.c.o
+        /usr/bin/cc   -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_98ada.dir/CheckIncludeFile.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VHJPQr/CheckIncludeFile.c
+        Linking C executable cmTC_98ada
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98ada.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_98ada.dir/CheckIncludeFile.c.o -o cmTC_98ada
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-VHJPQr'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "CMakeLists.txt:41 (check_library_exists)"
+    checks:
+      - "Looking for crc32c_value in crc32c"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vhfiwh"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vhfiwh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_CRC32C"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vhfiwh'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_58198/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_58198.dir/build.make CMakeFiles/cmTC_58198.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vhfiwh'
+        Building C object CMakeFiles/cmTC_58198.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=crc32c_value -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_58198.dir/CheckFunctionExists.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vhfiwh/CheckFunctionExists.c
+        Linking C executable cmTC_58198
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58198.dir/link.txt --verbose=1
+        /usr/bin/ld: cannot find -lcrc32c: No such file or directory
+        collect2: error: ld returned 1 exit status
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=crc32c_value CMakeFiles/cmTC_58198.dir/CheckFunctionExists.c.o -o cmTC_58198  -lcrc32c
+        make[1]: *** [CMakeFiles/cmTC_58198.dir/build.make:102: cmTC_58198] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-vhfiwh'
+        make: *** [Makefile:134: cmTC_58198/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "CMakeLists.txt:42 (check_library_exists)"
+    checks:
+      - "Looking for snappy_compress in snappy"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qWL1HI"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qWL1HI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_SNAPPY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qWL1HI'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_73520/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_73520.dir/build.make CMakeFiles/cmTC_73520.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qWL1HI'
+        Building C object CMakeFiles/cmTC_73520.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=snappy_compress -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_73520.dir/CheckFunctionExists.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qWL1HI/CheckFunctionExists.c
+        Linking C executable cmTC_73520
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73520.dir/link.txt --verbose=1
+        /usr/bin/ld: cannot find -lsnappy: No such file or directory
+        collect2: error: ld returned 1 exit status
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=snappy_compress CMakeFiles/cmTC_73520.dir/CheckFunctionExists.c.o -o cmTC_73520  -lsnappy
+        make[1]: *** [CMakeFiles/cmTC_73520.dir/build.make:102: cmTC_73520] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-qWL1HI'
+        make: *** [Makefile:134: cmTC_73520/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "CMakeLists.txt:43 (check_library_exists)"
+    checks:
+      - "Looking for zstd_compress in zstd"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tgVoUV"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tgVoUV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_ZSTD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tgVoUV'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_48e02/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_48e02.dir/build.make CMakeFiles/cmTC_48e02.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tgVoUV'
+        Building C object CMakeFiles/cmTC_48e02.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=zstd_compress -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_48e02.dir/CheckFunctionExists.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tgVoUV/CheckFunctionExists.c
+        Linking C executable cmTC_48e02
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48e02.dir/link.txt --verbose=1
+        /usr/bin/ld: cannot find -lzstd: No such file or directory
+        collect2: error: ld returned 1 exit status
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=zstd_compress CMakeFiles/cmTC_48e02.dir/CheckFunctionExists.c.o -o cmTC_48e02  -lzstd
+        make[1]: *** [CMakeFiles/cmTC_48e02.dir/build.make:102: cmTC_48e02] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tgVoUV'
+        make: *** [Makefile:134: cmTC_48e02/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "CMakeLists.txt:44 (check_library_exists)"
+    checks:
+      - "Looking for malloc in tcmalloc"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_TCMALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2a9ff/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2a9ff.dir/build.make CMakeFiles/cmTC_2a9ff.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt'
+        Building C object CMakeFiles/cmTC_2a9ff.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=malloc -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_2a9ff.dir/CheckFunctionExists.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt/CheckFunctionExists.c
+        \x1b[01m\x1b[K<command-line>:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kconflicting types for built-in function ‘\x1b[01m\x1b[Kmalloc\x1b[m\x1b[K’; expected ‘\x1b[01m\x1b[Kvoid *(long unsigned int)\x1b[m\x1b[K’ [\x1b[01;35m\x1b[K-Wbuiltin-declaration-mismatch\x1b[m\x1b[K]
+        \x1b[01m\x1b[K/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt/CheckFunctionExists.c:7:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kin expansion of macro ‘\x1b[01m\x1b[KCHECK_FUNCTION_EXISTS\x1b[m\x1b[K’
+            7 |   \x1b[01;36m\x1b[KCHECK_FUNCTION_EXISTS\x1b[m\x1b[K(void);
+              |   \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K
+        \x1b[01m\x1b[K/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt/CheckFunctionExists.c:1:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K‘\x1b[01m\x1b[Kmalloc\x1b[m\x1b[K’ is declared in header ‘\x1b[01m\x1b[K<stdlib.h>\x1b[m\x1b[K’
+          +++ |+\x1b[32m\x1b[K#include <stdlib.h>\x1b[m\x1b[K
+            1 | #ifdef CHECK_FUNCTION_EXISTS
+        Linking C executable cmTC_2a9ff
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a9ff.dir/link.txt --verbose=1
+        /usr/bin/ld: cannot find -ltcmalloc: No such file or directory
+        collect2: error: ld returned 1 exit status
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=malloc CMakeFiles/cmTC_2a9ff.dir/CheckFunctionExists.c.o -o cmTC_2a9ff  -ltcmalloc
+        make[1]: *** [CMakeFiles/cmTC_2a9ff.dir/build.make:102: cmTC_2a9ff] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mbyvqt'
+        make: *** [Makefile:134: cmTC_2a9ff/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXSymbolExists.cmake:74 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:52 (check_cxx_symbol_exists)"
+    checks:
+      - "Looking for fdatasync"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-FlvH3E"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-FlvH3E"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_FDATASYNC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-FlvH3E'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5662e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5662e.dir/build.make CMakeFiles/cmTC_5662e.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-FlvH3E'
+        Building CXX object CMakeFiles/cmTC_5662e.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_5662e.dir/CheckSymbolExists.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-FlvH3E/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_5662e
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5662e.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_5662e.dir/CheckSymbolExists.cxx.o -o cmTC_5662e
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-FlvH3E'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXSymbolExists.cmake:74 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:53 (check_cxx_symbol_exists)"
+    checks:
+      - "Looking for F_FULLFSYNC"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_FULLFSYNC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b630f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_b630f.dir/build.make CMakeFiles/cmTC_b630f.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS'
+        Building CXX object CMakeFiles/cmTC_b630f.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_b630f.dir/CheckSymbolExists.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS/CheckSymbolExists.cxx
+        \x1b[01m\x1b[K/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS/CheckSymbolExists.cxx:\x1b[m\x1b[K In function ‘\x1b[01m\x1b[Kint\x1b[01;32m\x1b[K main\x1b[m\x1b[K(int, char**)\x1b[m\x1b[K’:
+        \x1b[01m\x1b[K/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS/CheckSymbolExists.cxx:8:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K‘\x1b[01m\x1b[KF_FULLFSYNC\x1b[m\x1b[K’ was not declared in this scope
+            8 |   return ((int*)(&\x1b[01;31m\x1b[KF_FULLFSYNC\x1b[m\x1b[K))[argc];
+              |                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K
+        make[1]: *** [CMakeFiles/cmTC_b630f.dir/build.make:81: CMakeFiles/cmTC_b630f.dir/CheckSymbolExists.cxx.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wOz0BS'
+        make: *** [Makefile:134: cmTC_b630f/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXSymbolExists.cmake:74 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:54 (check_cxx_symbol_exists)"
+    checks:
+      - "Looking for O_CLOEXEC"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDIXjb"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDIXjb"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_O_CLOEXEC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDIXjb'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ba006/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ba006.dir/build.make CMakeFiles/cmTC_ba006.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDIXjb'
+        Building CXX object CMakeFiles/cmTC_ba006.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_ba006.dir/CheckSymbolExists.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDIXjb/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_ba006
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba006.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_ba006.dir/CheckSymbolExists.cxx.o -o cmTC_ba006
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-uDIXjb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:83 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CLANG_THREAD_SAFETY"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6pMsO3"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6pMsO3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_CLANG_THREAD_SAFETY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6pMsO3'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_09871/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_09871.dir/build.make CMakeFiles/cmTC_09871.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6pMsO3'
+        Building CXX object CMakeFiles/cmTC_09871.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CLANG_THREAD_SAFETY  -fno-exceptions -fno-rtti  -std=c++11 -fdiagnostics-color=always   -Wthread-safety -o CMakeFiles/cmTC_09871.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6pMsO3/src.cxx
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-Wthread-safety\x1b[m\x1b[K'
+        make[1]: *** [CMakeFiles/cmTC_09871.dir/build.make:81: CMakeFiles/cmTC_09871.dir/src.cxx.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-6pMsO3'
+        make: *** [Makefile:134: cmTC_09871/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:86 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test LEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wCMqW0"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wCMqW0"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "LEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wCMqW0'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_556a2/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_556a2.dir/build.make CMakeFiles/cmTC_556a2.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wCMqW0'
+        Building CXX object CMakeFiles/cmTC_556a2.dir/src.cxx.o
+        /usr/bin/c++ -DLEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS  -fno-exceptions -fno-rtti  -std=c++11 -fdiagnostics-color=always   -Wno-missing-field-initializers -o CMakeFiles/cmTC_556a2.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wCMqW0/src.cxx
+        Linking CXX executable cmTC_556a2
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_556a2.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  CMakeFiles/cmTC_556a2.dir/src.cxx.o -o cmTC_556a2
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wCMqW0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:92 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test HAVE_CXX17_HAS_INCLUDE"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X1XaZ9"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X1XaZ9"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_CXX17_HAS_INCLUDE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X1XaZ9'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3adcd/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3adcd.dir/build.make CMakeFiles/cmTC_3adcd.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X1XaZ9'
+        Building CXX object CMakeFiles/cmTC_3adcd.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX17_HAS_INCLUDE  -fno-exceptions -fno-rtti  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_3adcd.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X1XaZ9/src.cxx
+        Linking CXX executable cmTC_3adcd
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3adcd.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  CMakeFiles/cmTC_3adcd.dir/src.cxx.o -o cmTC_3adcd
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X1XaZ9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:285 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-8MUUH6"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-8MUUH6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-8MUUH6'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8babc/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_8babc.dir/build.make CMakeFiles/cmTC_8babc.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-8MUUH6'
+        Building C object CMakeFiles/cmTC_8babc.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -Wstrict-prototypes  -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_8babc.dir/src.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-8MUUH6/src.c
+        Linking C executable cmTC_8babc
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8babc.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wstrict-prototypes  CMakeFiles/cmTC_8babc.dir/src.c.o -o cmTC_8babc
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-8MUUH6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "third_party/benchmark/CMakeLists.txt:125 (check_library_exists)"
+    checks:
+      - "Looking for shm_open in rt"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1JB84s"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1JB84s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_LIB_RT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1JB84s'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e5ae0/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_e5ae0.dir/build.make CMakeFiles/cmTC_e5ae0.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1JB84s'
+        Building C object CMakeFiles/cmTC_e5ae0.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=shm_open -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_e5ae0.dir/CheckFunctionExists.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1JB84s/CheckFunctionExists.c
+        Linking C executable cmTC_e5ae0
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5ae0.dir/link.txt --verbose=1
+        /usr/bin/cc  -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=shm_open CMakeFiles/cmTC_e5ae0.dir/CheckFunctionExists.c.o -o cmTC_e5ae0  -lrt
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1JB84s'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:174 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WALL"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fJiDlz"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fJiDlz"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WALL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fJiDlz'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7647f/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_7647f.dir/build.make CMakeFiles/cmTC_7647f.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fJiDlz'
+        Building CXX object CMakeFiles/cmTC_7647f.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WALL  -fno-exceptions -fno-rtti  -Wall -std=c++11 -fdiagnostics-color=always   -Wall -o CMakeFiles/cmTC_7647f.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fJiDlz/src.cxx
+        Linking CXX executable cmTC_7647f
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7647f.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall CMakeFiles/cmTC_7647f.dir/src.cxx.o -o cmTC_7647f
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-fJiDlz'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:175 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WEXTRA"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X7l2H2"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X7l2H2"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WEXTRA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X7l2H2'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5aca8/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5aca8.dir/build.make CMakeFiles/cmTC_5aca8.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X7l2H2'
+        Building CXX object CMakeFiles/cmTC_5aca8.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WEXTRA  -fno-exceptions -fno-rtti  -Wall  -Wextra -std=c++11 -fdiagnostics-color=always   -Wextra -o CMakeFiles/cmTC_5aca8.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X7l2H2/src.cxx
+        Linking CXX executable cmTC_5aca8
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5aca8.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra CMakeFiles/cmTC_5aca8.dir/src.cxx.o -o cmTC_5aca8
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-X7l2H2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:176 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSHADOW"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-eAgnwH"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-eAgnwH"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-eAgnwH'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dedc9/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_dedc9.dir/build.make CMakeFiles/cmTC_dedc9.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-eAgnwH'
+        Building CXX object CMakeFiles/cmTC_dedc9.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WSHADOW  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow -std=c++11 -fdiagnostics-color=always   -Wshadow -o CMakeFiles/cmTC_dedc9.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-eAgnwH/src.cxx
+        Linking CXX executable cmTC_dedc9
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dedc9.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow CMakeFiles/cmTC_dedc9.dir/src.cxx.o -o cmTC_dedc9
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-eAgnwH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:177 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WFLOAT_EQUAL"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SIflZP"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SIflZP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WFLOAT_EQUAL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SIflZP'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_30050/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_30050.dir/build.make CMakeFiles/cmTC_30050.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SIflZP'
+        Building CXX object CMakeFiles/cmTC_30050.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WFLOAT_EQUAL  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal -std=c++11 -fdiagnostics-color=always   -Wfloat-equal -o CMakeFiles/cmTC_30050.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SIflZP/src.cxx
+        Linking CXX executable cmTC_30050
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30050.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal CMakeFiles/cmTC_30050.dir/src.cxx.o -o cmTC_30050
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-SIflZP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:179 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WERROR"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Rc3fYq"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Rc3fYq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Rc3fYq'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d1856/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_d1856.dir/build.make CMakeFiles/cmTC_d1856.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Rc3fYq'
+        Building CXX object CMakeFiles/cmTC_d1856.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WERROR  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror -std=c++11 -fdiagnostics-color=always   -Werror -o CMakeFiles/cmTC_d1856.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Rc3fYq/src.cxx
+        Linking CXX executable cmTC_d1856
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1856.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror CMakeFiles/cmTC_d1856.dir/src.cxx.o -o cmTC_d1856
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Rc3fYq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:183 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cW1cow"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cW1cow"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSUGGEST_OVERRIDE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cW1cow'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9a5e0/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_9a5e0.dir/build.make CMakeFiles/cmTC_9a5e0.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cW1cow'
+        Building CXX object CMakeFiles/cmTC_9a5e0.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WSUGGEST_OVERRIDE  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override -std=c++11 -fdiagnostics-color=always   -Wsuggest-override -o CMakeFiles/cmTC_9a5e0.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cW1cow/src.cxx
+        Linking CXX executable cmTC_9a5e0
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a5e0.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override CMakeFiles/cmTC_9a5e0.dir/src.cxx.o -o cmTC_9a5e0
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-cW1cow'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:185 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_PEDANTIC"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GfGrI0"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GfGrI0"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_PEDANTIC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GfGrI0'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_eba66/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_eba66.dir/build.make CMakeFiles/cmTC_eba66.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GfGrI0'
+        Building CXX object CMakeFiles/cmTC_eba66.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_PEDANTIC  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic -std=c++11 -fdiagnostics-color=always   -pedantic -o CMakeFiles/cmTC_eba66.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GfGrI0/src.cxx
+        Linking CXX executable cmTC_eba66
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eba66.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic CMakeFiles/cmTC_eba66.dir/src.cxx.o -o cmTC_eba66
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-GfGrI0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:186 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_PEDANTIC_ERRORS"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g2lhTM"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g2lhTM"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_PEDANTIC_ERRORS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g2lhTM'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3a55e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3a55e.dir/build.make CMakeFiles/cmTC_3a55e.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g2lhTM'
+        Building CXX object CMakeFiles/cmTC_3a55e.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_PEDANTIC_ERRORS  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors -std=c++11 -fdiagnostics-color=always   -pedantic-errors -o CMakeFiles/cmTC_3a55e.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g2lhTM/src.cxx
+        Linking CXX executable cmTC_3a55e
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a55e.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors CMakeFiles/cmTC_3a55e.dir/src.cxx.o -o cmTC_3a55e
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g2lhTM'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:187 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rMvDsD"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rMvDsD"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSHORTEN_64_TO_32"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rMvDsD'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_df15e/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_df15e.dir/build.make CMakeFiles/cmTC_df15e.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rMvDsD'
+        Building CXX object CMakeFiles/cmTC_df15e.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32 -std=c++11 -fdiagnostics-color=always   -Wshorten-64-to-32 -o CMakeFiles/cmTC_df15e.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rMvDsD/src.cxx
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-Wshorten-64-to-32\x1b[m\x1b[K'
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-Wshorten-64-to-32\x1b[m\x1b[K'
+        make[1]: *** [CMakeFiles/cmTC_df15e.dir/build.make:81: CMakeFiles/cmTC_df15e.dir/src.cxx.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-rMvDsD'
+        make: *** [Makefile:134: cmTC_df15e/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:188 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_FSTRICT_ALIASING"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1nWzn4"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1nWzn4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_FSTRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1nWzn4'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5d15b/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5d15b.dir/build.make CMakeFiles/cmTC_5d15b.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1nWzn4'
+        Building CXX object CMakeFiles/cmTC_5d15b.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_FSTRICT_ALIASING  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing -std=c++11 -fdiagnostics-color=always   -fstrict-aliasing -o CMakeFiles/cmTC_5d15b.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1nWzn4/src.cxx
+        Linking CXX executable cmTC_5d15b
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d15b.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing CMakeFiles/cmTC_5d15b.dir/src.cxx.o -o cmTC_5d15b
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1nWzn4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:191 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7jwZi6"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7jwZi6"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7jwZi6'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e41b4/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_e41b4.dir/build.make CMakeFiles/cmTC_e41b4.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7jwZi6'
+        Building CXX object CMakeFiles/cmTC_e41b4.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -std=c++11 -fdiagnostics-color=always   -Wno-deprecated-declarations -o CMakeFiles/cmTC_e41b4.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7jwZi6/src.cxx
+        Linking CXX executable cmTC_e41b4
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e41b4.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations CMakeFiles/cmTC_e41b4.dir/src.cxx.o -o cmTC_e41b4
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-7jwZi6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:200 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-troMug"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-troMug"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WNO_DEPRECATED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-troMug'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_02a70/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_02a70.dir/build.make CMakeFiles/cmTC_02a70.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-troMug'
+        Building CXX object CMakeFiles/cmTC_02a70.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WNO_DEPRECATED  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated -std=c++11 -fdiagnostics-color=always   -Wno-deprecated -o CMakeFiles/cmTC_02a70.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-troMug/src.cxx
+        Linking CXX executable cmTC_02a70
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02a70.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated CMakeFiles/cmTC_02a70.dir/src.cxx.o -o cmTC_02a70
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-troMug'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:203 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_FNO_EXCEPTIONS"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Zug6W8"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Zug6W8"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_FNO_EXCEPTIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Zug6W8'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1db0c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_1db0c.dir/build.make CMakeFiles/cmTC_1db0c.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Zug6W8'
+        Building CXX object CMakeFiles/cmTC_1db0c.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_FNO_EXCEPTIONS  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions -std=c++11 -fdiagnostics-color=always   -fno-exceptions -o CMakeFiles/cmTC_1db0c.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Zug6W8/src.cxx
+        Linking CXX executable cmTC_1db0c
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1db0c.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions CMakeFiles/cmTC_1db0c.dir/src.cxx.o -o cmTC_1db0c
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Zug6W8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:208 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSTRICT_ALIASING"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DMuQaH"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DMuQaH"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSTRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DMuQaH'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5f3c6/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5f3c6.dir/build.make CMakeFiles/cmTC_5f3c6.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DMuQaH'
+        Building CXX object CMakeFiles/cmTC_5f3c6.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WSTRICT_ALIASING  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing -std=c++11 -fdiagnostics-color=always   -Wstrict-aliasing -o CMakeFiles/cmTC_5f3c6.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DMuQaH/src.cxx
+        Linking CXX executable cmTC_5f3c6
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f3c6.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing CMakeFiles/cmTC_5f3c6.dir/src.cxx.o -o cmTC_5f3c6
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-DMuQaH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:213 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WD654"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tvEfwn"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tvEfwn"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WD654"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tvEfwn'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3319c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3319c.dir/build.make CMakeFiles/cmTC_3319c.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tvEfwn'
+        Building CXX object CMakeFiles/cmTC_3319c.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WD654  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -wd654 -std=c++11 -fdiagnostics-color=always   -wd654 -o CMakeFiles/cmTC_3319c.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tvEfwn/src.cxx
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-wd654\x1b[m\x1b[K'
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-wd654\x1b[m\x1b[K'
+        make[1]: *** [CMakeFiles/cmTC_3319c.dir/build.make:81: CMakeFiles/cmTC_3319c.dir/src.cxx.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-tvEfwn'
+        make: *** [Makefile:134: cmTC_3319c/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:214 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WTHREAD_SAFETY"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4NSYIm"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4NSYIm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WTHREAD_SAFETY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4NSYIm'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ff5c0/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_ff5c0.dir/build.make CMakeFiles/cmTC_ff5c0.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4NSYIm'
+        Building CXX object CMakeFiles/cmTC_ff5c0.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -Wthread-safety -std=c++11 -fdiagnostics-color=always   -Wthread-safety -o CMakeFiles/cmTC_ff5c0.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4NSYIm/src.cxx
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-Wthread-safety\x1b[m\x1b[K'
+        \x1b[01m\x1b[Kc++:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kunrecognized command-line option '\x1b[01m\x1b[K-Wthread-safety\x1b[m\x1b[K'
+        make[1]: *** [CMakeFiles/cmTC_ff5c0.dir/build.make:81: CMakeFiles/cmTC_ff5c0.dir/src.cxx.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-4NSYIm'
+        make: *** [Makefile:134: cmTC_ff5c0/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXCompilerFlag.cmake:55 (cmake_check_compiler_flag)"
+      - "third_party/benchmark/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "third_party/benchmark/CMakeLists.txt:265 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_COVERAGE"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ZNvwP"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ZNvwP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "HAVE_CXX_FLAG_COVERAGE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ZNvwP'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_15d2b/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_15d2b.dir/build.make CMakeFiles/cmTC_15d2b.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ZNvwP'
+        Building CXX object CMakeFiles/cmTC_15d2b.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_CXX_FLAG_COVERAGE  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  --coverage -std=c++11 -fdiagnostics-color=always   --coverage -o CMakeFiles/cmTC_15d2b.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ZNvwP/src.cxx
+        Linking CXX executable cmTC_15d2b
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15d2b.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  --coverage CMakeFiles/cmTC_15d2b.dir/src.cxx.o -o cmTC_15d2b
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-0ZNvwP'
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "third_party/benchmark/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "third_party/benchmark/CMakeLists.txt:294 (cxx_feature_check)"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_STD_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_43d38/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_43d38.dir/build.make CMakeFiles/cmTC_43d38.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_43d38.dir/std_regex.cpp.o
+        /usr/bin/c++   -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_43d38.dir/std_regex.cpp.o -c /home/caoheng/repo/leveldb/third_party/benchmark/cmake/std_regex.cpp
+        Linking CXX executable cmTC_43d38
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43d38.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  CMakeFiles/cmTC_43d38.dir/std_regex.cpp.o -o cmTC_43d38
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_STD_REGEX"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "third_party/benchmark/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "third_party/benchmark/CMakeLists.txt:295 (cxx_feature_check)"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_GNU_POSIX_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_470dc/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_470dc.dir/build.make CMakeFiles/cmTC_470dc.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_470dc.dir/gnu_posix_regex.cpp.o
+        /usr/bin/c++   -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_470dc.dir/gnu_posix_regex.cpp.o -c /home/caoheng/repo/leveldb/third_party/benchmark/cmake/gnu_posix_regex.cpp
+        \x1b[01m\x1b[K/home/caoheng/repo/leveldb/third_party/benchmark/cmake/gnu_posix_regex.cpp:1:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kgnuregex.h: No such file or directory
+            1 | #include \x1b[01;31m\x1b[K<gnuregex.h>\x1b[m\x1b[K
+              |          \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_470dc.dir/build.make:81: CMakeFiles/cmTC_470dc.dir/gnu_posix_regex.cpp.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        make: *** [Makefile:134: cmTC_470dc/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "RUN_HAVE_GNU_POSIX_REGEX"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "third_party/benchmark/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "third_party/benchmark/CMakeLists.txt:296 (cxx_feature_check)"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_POSIX_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_18073/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_18073.dir/build.make CMakeFiles/cmTC_18073.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_18073.dir/posix_regex.cpp.o
+        /usr/bin/c++   -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_18073.dir/posix_regex.cpp.o -c /home/caoheng/repo/leveldb/third_party/benchmark/cmake/posix_regex.cpp
+        Linking CXX executable cmTC_18073
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18073.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  CMakeFiles/cmTC_18073.dir/posix_regex.cpp.o -o cmTC_18073
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_POSIX_REGEX"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "third_party/benchmark/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "third_party/benchmark/CMakeLists.txt:305 (cxx_feature_check)"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_STEADY_CLOCK"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6ad26/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_6ad26.dir/build.make CMakeFiles/cmTC_6ad26.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_6ad26.dir/steady_clock.cpp.o
+        /usr/bin/c++   -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_6ad26.dir/steady_clock.cpp.o -c /home/caoheng/repo/leveldb/third_party/benchmark/cmake/steady_clock.cpp
+        Linking CXX executable cmTC_6ad26
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ad26.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  CMakeFiles/cmTC_6ad26.dir/steady_clock.cpp.o -o cmTC_6ad26
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_STEADY_CLOCK"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "third_party/benchmark/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "third_party/benchmark/CMakeLists.txt:309 (cxx_feature_check)"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/caoheng/repo/leveldb/third_party/benchmark/cmake/Modules;/home/caoheng/repo/leveldb/third_party/benchmark/cmake"
+    buildResult:
+      variable: "COMPILE_HAVE_PTHREAD_AFFINITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_66392/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_66392.dir/build.make CMakeFiles/cmTC_66392.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        Building CXX object CMakeFiles/cmTC_66392.dir/pthread_affinity.cpp.o
+        /usr/bin/c++   -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_66392.dir/pthread_affinity.cpp.o -c /home/caoheng/repo/leveldb/third_party/benchmark/cmake/pthread_affinity.cpp
+        Linking CXX executable cmTC_66392
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66392.dir/link.txt --verbose=1
+        /usr/bin/c++  -fno-exceptions -fno-rtti  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -fno-exceptions  -Wstrict-aliasing  CMakeFiles/cmTC_66392.dir/pthread_affinity.cpp.o -o cmTC_66392
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_PTHREAD_AFFINITY"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "CMakeLists.txt:444 (check_library_exists)"
+    checks:
+      - "Looking for sqlite3_open in sqlite3"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw5bKW"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw5bKW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_SQLITE3"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw5bKW'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9b485/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_9b485.dir/build.make CMakeFiles/cmTC_9b485.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw5bKW'
+        Building C object CMakeFiles/cmTC_9b485.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=sqlite3_open -std=c11 -fdiagnostics-color=always -o CMakeFiles/cmTC_9b485.dir/CheckFunctionExists.c.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw5bKW/CheckFunctionExists.c
+        Linking C executable cmTC_9b485
+        /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b485.dir/link.txt --verbose=1
+        /usr/bin/ld: cannot find -lsqlite3: No such file or directory
+        collect2: error: ld returned 1 exit status
+        /usr/bin/cc  -Wstrict-prototypes -DCHECK_FUNCTION_EXISTS=sqlite3_open CMakeFiles/cmTC_9b485.dir/CheckFunctionExists.c.o -o cmTC_9b485  -lsqlite3
+        make[1]: *** [CMakeFiles/cmTC_9b485.dir/build.make:102: cmTC_9b485] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-mw5bKW'
+        make: *** [Makefile:134: cmTC_9b485/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:455 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test HAVE_KYOTOCABINET"
+    directories:
+      source: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ"
+      binary: "/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " -fno-exceptions -fno-rtti"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAVE_KYOTOCABINET"
+      cached: true
+      stdout: |
+        Change Dir: '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ'
+        
+        Run Build Command(s): /home/caoheng/.cache/JetBrains/RemoteDev/dist/9e0128be961c6_CLion-2025.1/bin/cmake/linux/x64/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3437d/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_3437d.dir/build.make CMakeFiles/cmTC_3437d.dir/build
+        make[1]: Entering directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ'
+        Building CXX object CMakeFiles/cmTC_3437d.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_KYOTOCABINET  -fno-exceptions -fno-rtti  -std=c++11 -fdiagnostics-color=always -o CMakeFiles/cmTC_3437d.dir/src.cxx.o -c /home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ/src.cxx
+        \x1b[01m\x1b[K/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ/src.cxx:2:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kkcpolydb.h: No such file or directory
+            2 | #include \x1b[01;31m\x1b[K<kcpolydb.h>\x1b[m\x1b[K
+              |          \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_3437d.dir/build.make:81: CMakeFiles/cmTC_3437d.dir/src.cxx.o] Error 1
+        make[1]: Leaving directory '/home/caoheng/repo/leveldb/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-jjiUuZ'
+        make: *** [Makefile:134: cmTC_3437d/fast] Error 2
+        
+      exitCode: 2
+...
