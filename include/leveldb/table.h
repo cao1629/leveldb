@@ -48,6 +48,8 @@ class LEVELDB_EXPORT Table {
   // Returns a new iterator over the table contents.
   // The result of NewIterator() is initially invalid (caller must
   // call one of the Seek methods on the iterator before using it).
+  //
+  // Return a TwoLevelIterator
   Iterator* NewIterator(const ReadOptions&) const;
 
   // Given a key, return an approximate byte offset in the file where

@@ -42,15 +42,24 @@ namespace {
 // are kept in a circular doubly linked list ordered by access time.
 struct LRUHandle {
   void* value;
+
+  // How do we free the resource Slice holds.
   void (*deleter)(const Slice&, void* value);
+
+  // next LRUHandle in the same bucket
   LRUHandle* next_hash;
+
+  // This LRUHandle is either in lru_ or in_use_.
   LRUHandle* next;
   LRUHandle* prev;
+
   size_t charge;  // TODO(opt): Only allow uint32_t?
   size_t key_length;
   bool in_cache;     // Whether entry is in the cache.
   uint32_t refs;     // References, including cache reference, if present.
   uint32_t hash;     // Hash of key(); used for fast sharding and comparisons
+
+  // flexible array member
   char key_data[1];  // Beginning of key
 
   Slice key() const {
@@ -161,8 +170,18 @@ class LRUCache {
                         size_t charge,
                         void (*deleter)(const Slice& key, void* value));
   Cache::Handle* Lookup(const Slice& key, uint32_t hash);
+
+  // "handle" is previously obtained from Lookup() or Insert().
+  // Reference count decreases.
+  // If it drops to 1, move it from in_use_ to lru_.
+  // If it drops to 0, release the resource.
   void Release(Cache::Handle* handle);
+
+  // Remove an entry from cache.
+  // (1) Remove it from the hash table.
+  // (2) Remove it from the lru_ or in_use_.
   void Erase(const Slice& key, uint32_t hash);
+
   void Prune();
   size_t TotalCharge() const {
     MutexLock l(&mutex_);
@@ -186,6 +205,7 @@ class LRUCache {
   // Dummy head of LRU list.
   // lru.prev is newest entry, lru.next is oldest entry.
   // Entries have refs==1 and in_cache==true.
+  // refs is 1: used by this LRUCache
   LRUHandle lru_ GUARDED_BY(mutex_);
 
   // Dummy head of in-use list.

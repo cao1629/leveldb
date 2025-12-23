@@ -17,6 +17,10 @@
 
 namespace leveldb {
 
+
+// Rep: Representation
+// This is Pimpl pattern: Pointer to Implementation
+// Table class has a pointer to Rep struct that contains all the data members
 struct Table::Rep {
   ~Rep() {
     delete filter;
