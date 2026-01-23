@@ -88,6 +88,9 @@ class Reader {
   SequentialFile* const file_;
   Reporter* const reporter_;
   bool const checksum_;
+
+  // One block is 32 KB. Each time read a block into backing_store_
+  // We won't see a partial physical record if anything goes right.
   char* const backing_store_;
   Slice buffer_;
   bool eof_;  // Last Read() indicated EOF by returning < kBlockSize

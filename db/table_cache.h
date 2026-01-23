@@ -19,6 +19,7 @@ namespace leveldb {
 
 class Env;
 
+// cache entry: TableAndFile (class Table for read, class RandomAccessFile as a file handle)
 class TableCache {
  public:
   TableCache(const std::string& dbname, const Options& options, int entries);

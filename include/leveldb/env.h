@@ -195,6 +195,8 @@ class LEVELDB_EXPORT Env {
   // added to the same Env may run concurrently in different threads.
   // I.e., the caller may not assume that background work items are
   // serialized.
+  //
+  // void (*function)(void* arg), a function pointer
   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
 
   // Start a new thread, invoking "function(arg)" within the new thread.

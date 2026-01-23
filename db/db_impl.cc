@@ -8,6 +8,7 @@
 #include <atomic>
 #include <cstdint>
 #include <cstdio>
+#include <memory>
 #include <set>
 #include <string>
 #include <vector>
@@ -704,6 +705,9 @@ void DBImpl::BackgroundCall() {
   background_work_finished_signal_.SignalAll();
 }
 
+
+// If there is an immutable MemTable, do minior compaction.
+// Otherewise, do major compaction
 void DBImpl::BackgroundCompaction() {
   mutex_.AssertHeld();
 
@@ -1117,6 +1121,9 @@ int64_t DBImpl::TEST_MaxNextLevelOverlappingBytes() {
   return versions_->MaxNextLevelOverlappingBytes();
 }
 
+// -> look up memtable
+// -> look up immutable memtable
+// -> look up sstables through Version->Get()
 Status DBImpl::Get(const ReadOptions& options, const Slice& key,
                    std::string* value) {
   Status s;
@@ -1210,6 +1217,7 @@ Status DBImpl::Write(const WriteOptions& options, WriteBatch* updates) {
 
   MutexLock l(&mutex_);
   writers_.push_back(&w);
+
   while (!w.done && &w != writers_.front()) {
     w.cv.Wait();
   }
@@ -1217,11 +1225,14 @@ Status DBImpl::Write(const WriteOptions& options, WriteBatch* updates) {
     return w.status;
   }
 
+  // Now it's ready to write this batch.
   // May temporarily unlock and wait.
   Status status = MakeRoomForWrite(updates == nullptr);
   uint64_t last_sequence = versions_->LastSequence();
   Writer* last_writer = &w;
   if (status.ok() && updates != nullptr) {  // nullptr batch is for compactions
+
+    // Merge all WriteBatches after this one.
     WriteBatch* write_batch = BuildBatchGroup(&last_writer);
     WriteBatchInternal::SetSequence(write_batch, last_sequence + 1);
     last_sequence += WriteBatchInternal::Count(write_batch);
@@ -1256,6 +1267,7 @@ Status DBImpl::Write(const WriteOptions& options, WriteBatch* updates) {
     versions_->SetLastSequence(last_sequence);
   }
 
+  // signal other writers that we're done
   while (true) {
     Writer* ready = writers_.front();
     writers_.pop_front();
@@ -1364,6 +1376,7 @@ Status DBImpl::MakeRoomForWrite(bool force) {
       background_work_finished_signal_.Wait();
     } else {
       // Attempt to switch to a new memtable and trigger compaction of old
+      // assertion: no previous immutable memble that is being flushed
       assert(versions_->PrevLogNumber() == 0);
       uint64_t new_log_number = versions_->NewFileNumber();
       WritableFile* lfile = nullptr;

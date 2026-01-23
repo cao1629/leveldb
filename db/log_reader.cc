@@ -219,6 +219,10 @@ unsigned int Reader::ReadPhysicalRecord(Slice* result) {
     const uint32_t b = static_cast<uint32_t>(header[5]) & 0xff;
     const unsigned int type = header[6];
     const uint32_t length = a | (b << 8);
+
+    // Scenarios wehre this happen:
+    // - bit flip   length is corrupted   
+    // - writer crashed while writing playroad. eof
     if (kHeaderSize + length > buffer_.size()) {
       size_t drop_size = buffer_.size();
       buffer_.clear();
@@ -240,10 +244,12 @@ unsigned int Reader::ReadPhysicalRecord(Slice* result) {
       return kBadRecord;
     }
 
-    // Check crc
+    // Check crc: checksum of type + data
     if (checksum_) {
+  
       uint32_t expected_crc = crc32c::Unmask(DecodeFixed32(header));
       uint32_t actual_crc = crc32c::Value(header + 6, 1 + length);
+
       if (actual_crc != expected_crc) {
         // Drop the rest of the buffer since "length" itself may have
         // been corrupted and if we trust it, we could find some

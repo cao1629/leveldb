@@ -14,6 +14,7 @@ namespace leveldb {
 
 struct Options;
 
+// use a std::string as an output buffer
 class BlockBuilder {
  public:
   explicit BlockBuilder(const Options* options);
